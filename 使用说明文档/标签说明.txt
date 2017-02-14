@@ -1,0 +1,673 @@
+
+
+admin,MD5加密后为: 21232f297a57a5a743894a0e4a801fc3
+
+****************************模板介绍开始****************************
+注意： 模版头部要插入以下必要的引用
+<script>var maccms_path = "{maccms:path}";</script>
+<script src="{maccms:path}js/jquery.js"></script>
+<script src="{maccms:path}js/function.js"></script>
+播放页面需要另外引用
+<script src="{maccms:path}js/player.js"></script>
+
+head.html  头部
+foot.html  尾部
+index.html  首页
+artindex.html  文章首页
+art.html  文章内容页
+artlist.html 文章分类分页
+arttopic.html  文章专题首页
+artsearch.html  文章搜索页
+artmap.html  文章地图页
+vod.html  视频内容页
+vodlist.html  视频分类分页
+vodtopic.html  视频专题首页
+vodsearch.html  视频搜索页
+vodplay.html  视频播放页
+vodplayopen.html  视频弹窗播放页
+vodmap.html  视频地图页
+gbook.html  留言本
+userlogged.html  用户登录-已登录
+userlogin.html  用户登录-未登录
+label_   开头的都是自定义页面
+****************************模板介绍结束****************************
+
+
+****************************全局标签开始****************************
+{maccms:name}          网站名称
+{maccms:keywords}      网站关键字
+{maccms:description}   网站描述信息
+{maccms:icp}           网站备案号
+{maccms:qq}            管理员QQ
+{maccms:email}         管理员Email
+{maccms:url}           网站域名
+{maccms:path}          网站目录
+{maccms:templatepath}  网站模板目录
+
+ （以下3个链接主要为了同化asp和php模版的后缀）
+{maccms:gbooklink}      留言本链接 
+{maccms:searchlink}     搜索页链接
+{maccms:userlink}       用户登录页面链接
+
+{maccms:indexlink}      视频首页链接
+{maccms:artindexlink}   文章首页链接
+{maccms:vodmaplink}     视频地图链接
+{maccms:artmaplink}     文章地图链接
+{maccms:vodtopiclink}   视频专题链接
+{maccms:arttopiclink}   文章专题链接
+{maccms:vodallcount}    视频数据总量
+{maccms:voddaycount}    视频当天更新数据量
+{maccms:artallcount}    文章数据总量
+{maccms:artdaycount}    文章当天更新数据量
+
+{maccms:artalllist}     全部文章列表链接（此列表和分类页一样，带分页）
+{maccms:vodalllist}     全部视频列表链接（此列表和分类页一样，带分页）
+{maccms:usercount}      会员总数
+{maccms:userdaycount}   会员当天注册数量
+{maccms:usergroupid}    当前登录会员组ID,如果没有登录则是空
+{maccms:cache}          开启缓存时，缓存的时间标识
+{maccms:visits}         统计代码
+
+{maccms:curvodtypeid}  视频当前分类ID
+{maccms:curvodtypepid}  视频当前分类的父分类ID
+{maccms:curvodtopicid} 视频当前专题ID
+{maccms:curarttypeid}  文章当前分类ID
+{maccms:curarttypepid} 文章当前分类的父分类ID
+{maccms:curarttopicid} 文章当前专题ID
+
+{maccms:appid}    默认值-1 ，系统当前模块ID
+首页=10
+视频地图页=11
+视频专题首页=12
+
+文章首页=20
+文章地图页=21
+文章专题首页=22
+
+留言本=30
+
+
+{maccms:head}          头部模版
+{maccms:foot}          底部模版
+{maccms:runtime}       页面运行时间
+{maccms:userid}        会员ID
+{maccms:username}      会员名
+
+调用历史记录（10是显示数量，历史记录最多记录20条数据。）：<script>history_Look(10);</script>
+清空历史记录的方法：<a href="javascript:void(0);" onclick="history_del()">清除记录</a>
+****************************全局标签结束****************************
+
+
+
+****************************数据区域块标签(首页、地图页的栏目块双层循环) 开始****************************
+参数:
+	type: all获取所有分类包含父子，parenet获取所有父分类，child获取所有子分类,letter调用首字母列表,tag指定关键词列表
+	letter: 当type=letter时可用此参数，值为a,b,c/all 支持单个或多个,多个分类逗号隔开;all调出全部字母列表
+	tag: 数据区域列表分别调用的关键词 值为 赛车,汽车,摩托/all 用英文逗号(,)分隔，不能有空格
+	by:数据排序依据 id,sort 默认sort
+	order: 数据排序方式 desc(倒序) asc (正序)
+	table:必有参数vod则调用视频分类,art调用文章分类。
+	
+例: 调用视频分类
+{maccms:typematrix type=1,2,6 table=vod}
+	[typematrix:num]:序号
+	[typematrix:id]:id
+	[typematrix:name]:名称
+	[typematrix:key]:关键字
+	[typematrix:des]:描述
+	[typematrix:count]:数据数量
+	[typematrix:link]:链接
+	   {maccms:vodlist num=5 order=time type=[typematrix:id] start=1}
+		...同vodlist
+	   {/maccms:vodlist}
+{/maccms:typematrix}
+
+{maccms:typematrix type=letter letter=a,b,c,d}
+	[typematrix:num]:序号
+	[typematrix:name]:名称
+	[typematrix:link]:链接
+{/maccms:typematrix}
+
+{maccms:typematrix type=tag tag=火影忍者,海贼王,死神,美女,帅哥}
+	[typematrix:num]:序号
+	[typematrix:name]:名称
+	[typematrix:link]:链接
+{/maccms:typematrix}
+
+****************************数据区域块标签(首页、地图页的栏目块双层循环) 结束****************************
+
+
+****************************分类标签 (视频分类，文章分类通用) 开始****************************
+参数:
+	type:all获取所有分类包含父子，parenet获取所有父分类，child获取所有子分类 ,auto 在分类列表页使用（访问一级分类时获取二分类，二级分类获取二级分类）
+	by:数据排序依据 id,sort 默认sort
+	order: 数据排序方式 desc(倒序) asc (正序)
+	parent: 父栏目ID, 0表示所有顶级栏目, 具体id表示调用指定分类的子分类菜单
+	num:取分类数目，按照排序顺序。 6表示取得排序前6个分类。
+	table:必有参数vod则调用视频分类,art调用文章分类。
+	
+例:视频单级别分类调用: 
+{maccms:menulist type=parent order=asc table=vod}
+	[menulist:num]:序号
+	[menulist:id]:id
+	[menulist:pid]:父分类id
+	[menulist:name]:名称
+	[menulist:key]:关键字
+	[menulist:des]:描述
+	[menulist:link]:菜单项链接
+{/maccms:menulist}
+****************************分类标签 (视频分类，文章分类通用) 结束****************************
+
+
+****************************友情链接标签 开始****************************
+参数:
+	type:友情链接类型 font表示文字,pic表示图片
+        num: 获取数据条数
+例: 
+{maccms:linklist type=pic num=2}
+	[linklist:num]序号
+	[linklist:name]名称，支持长度控制[linklist:name len=10]
+	[linklist:link]地址
+	[linklist:pic]图片
+{/maccms:linklist}
+****************************友情链接标签 开始****************************
+
+
+
+****************************视频搜索参数详解 开始****************************
+
+搜索页面参数详解:
+searchtype:搜索内容vodsearch视频搜索，artsearch文章搜索 ， 默认为 视频搜索。
+
+
+搜索方式一： 参数 keyword,keytype 组合使用
+keytype可等于     拼音：pinyin,主演：starring,导演：directed,地区：area,语言：language,上映时间：year,首字母letter， 默认为名称
+例如：search.php?keyword=火影   搜索名称为火影的数据
+      search.php?keyword=刘德华&keytype=starring    搜索主演为刘德华的数据
+
+搜索方式二：数据名称：keyword，数据ID列表：ids,拼音：letter, 主演：starring, 导演： directed, 地区：area, 语言：language, 上映时间：year,首字母：letter, 分类：type
+例如：
+      search.php?keyword=火影   搜索名称为火影的数据
+      search.php?ids=123,567      搜索数据id为 123和567的数据，可以多条，逗号分割
+      search.php?starring=刘德华   搜索主演为刘德华的数据
+      search.php?letter=A      搜索首字母为A的数据
+      search.php?type=1&keyword=海贼   搜素分类ID为1下属的名称为海贼的数据
+
+共有排序参数： 排列顺序order, 按哪个字段排序by
+
+order=desc 倒序,asc正序
+by=id 数据ID,总人气hits,当天人气dayhits,本周人气weekhits,本月人气monthhits,添加时间addtime,推荐值level,顶数据good,踩数据bad,评分总数score,评分总人数scorecount
+
+search.php?keyword=火影&order=desc&by=hits   搜索名称为火影的数据按照 总人气倒序排列
+
+****************************视频搜索参数详解 结束****************************
+
+
+****************************视频分类分页列表标签(视频搜索页,视频分页列表,视频专题页分页) 开始****************************
+搜索页搜索参数:
+searchtype:搜索内容vodsearch视频搜索，artsearch文章搜索。
+搜索方式一：(两种搜索方式不能同时使用)
+keyword:搜索关键字跟keytype配合使用；
+keytype: pinyin拼音搜索，starring按主演，directed按导演，area按地区，language按语言，year按年份，letter按首字母
+ids:调用指定影片id的数据，多条数据用逗号分割。
+搜索方式二：
+letter：按拼音搜索
+starring:按主演
+directed:按导演
+area:按地图
+language:按语言
+year:按年份
+letter:按首字母
+order:排列顺序、desc倒序，asc正序
+by:以哪个字段为排序依据
+
+搜索页特有标签:
+	{searchpage:key}   搜索关键字
+	{searchpage:des}   搜索关键字描述
+	{searchpage:count}  搜索数据总量
+	{searchpage:page} 当前页数
+	{searchpage:name}  搜索的名称
+	{searchpage:nameencode}  url编码后的名称
+	{searchpage:pinyin}  搜索的拼音
+	{searchpage:letter}  搜索的首字母
+	{searchpage:starring}  搜索的主演
+	{searchpage:starringencode}  url编码后的主演
+	{searchpage:directed}  搜索的导演
+	{searchpage:directedencode}  url编码后的导演
+	{searchpage:area}  搜索的地区
+	{searchpage:areaencode}   url编码后的地区
+	{searchpage:language}  搜索的语言
+	{searchpage:languageencode}  url编码后的语言
+	{searchpage:year}  搜索的年代
+	{searchpage:type}  搜索的分类id
+
+分类页特有标签:
+	{typepage:id}当前分类id
+	{typepage:name}当前分类名称
+	{typepage:key}当前分类关键字
+	{typepage:des}当前分类描述
+	{typepage:link}当前分类链接
+	{typepage:page} 当前页数
+	{typepage:textlink} 当前位置导航链接  例如当前位置:首页  »  电影 
+	{typepage:linktype} 当前分类全部分类的数据链接，包含分类、地区、年代、排序参数
+	{typepage:linkarea} 当前分类全部地区的数据链接，包含分类、地区、年代、排序参数
+	{typepage:linkyear} 当前分类全部年代的数据链接，包含分类、地区、年代、排序参数
+
+参数:
+	num:每页数据条数  默认值12
+	by:数据排序依据 id,hits总点击,dayhits日点击,weekhits周点击,monthhits月点击,addtime添加时间,time更新时间,level推荐值,good顶数,bad踩数,score评分数,scorecount评分次数
+	order: 数据排序方式 desc(倒序) asc (正序)
+	state:影片连载 series(连载) 
+	level:推荐种类 1,2,3,4,5 /all 
+	topic:数据所在分类,可调出多个分类数据,如 1,2,3/all,current列表页当前分类,默认为全部
+	day:数据发布时间, 0 当天数据,具体数字表示哪天以来的数据. 7表示7天以来的数据
+	type:数据所在分类,可调出多个分类数据,如 1,2,3/all,current列表页当前分类,默认为当前分类
+	year:上映年代 2012
+	area:所属地区  大陆
+	language:语言  英语
+	letter:首字母  A
+	starring:调用主演的数据，如starring=刘德华
+	label:自定义页面名称，不带label_前缀,如 hot.html； 只在自定义页面中使用，可生成自定义页面的分页.
+	maxpage:自定义页面中，最大分页数量。
+    	
+{maccms:vodpagelist num=10 order=time}
+	[pagelist:num] 序号
+	[pagelist:numfill] 自动补位序号，个位数前补0
+	[pagelist:numjoin] 如使用start参数，则自动从start开始计数
+	[pagelist:id] 编号
+	[pagelist:name] 名称:可控长度
+	[pagelist:encodename] 名称:urlencode编码，可用于搜索
+	[pagelist:colorname] 带颜色名称:可控长度
+	[pagelist:subname] 副标名称:可控长度
+	[pagelist:enname] 拼音名:可控长度
+	[pagelist:ennamelink] 拼音名搜索链接
+	[pagelist:letter] 首字母
+	[pagelist:letterlink] 首字母搜索链接
+	[pagelist:state]  状态
+	[pagelist:color]  颜色
+	[pagelist:pic]  图片
+	[pagelist:picthumb]  缩略图片
+	[pagelist:picslide]  幻灯图片
+	[pagelist:starring] 主演:可控长度
+	[pagelist:starringlink] 主演搜索链接
+	[pagelist:directed] 导演:可控长度
+	[pagelist:directedlink] 导演搜索链接
+	[pagelist:year] 发行日期
+	[pagelist:yearlink] 发行日期搜索链接
+	[pagelist:area] 发行地区
+	[pagelist:arealink] 发行地区搜索链接
+	[pagelist:language] 发行语言
+	[pagelist:languagelink] 语言搜索链接
+	[pagelist:level]  推荐值
+	[pagelist:stint] 播放每集所需积分
+	[pagelist:stintdown] 下载每集所需积分
+	[pagelist:hits]  总点击量
+	[pagelist:dayhits]  今天点击量
+	[pagelist:weekhits]  本星期点击量
+	[pagelist:monthhits]  本月点击量
+	[pagelist:content]  描述:可控长度
+	[pagelist:contenttext]  过滤html后的描述:可控长度
+	[pagelist:remarks]备注
+	[pagelist:good] 顶数
+	[pagelist:bad] 踩数
+	[pagelist:score] 总评分数
+	[pagelist:scorecount] 总评分次数
+	[pagelist:scorepjf] 平均分
+	[pagelist:duration] 数据播放时长
+	[pagelist:addtime style=y-m-d]  添加时间:可控时间格式 yy-m-d ,y-m-d , m-d 
+	[pagelist:time style=y-m-d]  更新时间:可控时间格式 yy-m-d ,y-m-d , m-d 
+	[pagelist:from] 播放类型
+	[pagelist:fromdown] 下载类型
+	[pagelist:link] 链接
+	[pagelist:playlink] 播放链接，默认是第1组播放器的第1条数据
+	[pagelist:type] 分类ID
+	[pagelist:typepid]  所属分类的父分类ID
+	[pagelist:typelink] 分类链接
+	[pagelist:typename]  分类名
+	[pagelist:typeenname]  分类拼音名
+	[pagelist:topic]   专题ID
+	[pagelist:topicname]  专题名称
+	[pagelist:topiclink]  专题链接
+	[pagelist:userfav]  用户收藏链接
+	[pagelist:desktop] 保存到桌面链接
+	[pagelist:textlink] 当前位置导航链接 例如当前位置:首页  »  电影  »  动作片
+{/maccms:vodpagelist
+
+首页分页特别注意 :  需要加 linktype=indexpagelist
+例如：{maccms:pagenum len=10 linktype=indexpagelist}
+
+
+分页模块化设计自由性更强:
+共{maccms:pagedata}条数据
+每页{maccms:pagesize}条
+页次:{maccms:pagenow}/{maccms:pagecount} 
+<a href="{maccms:pagefirst}">首页</a>
+<a href="{maccms:pagepre}">上一页</a> 
+{maccms:pagenum len=5} 分页样式[1] [2] [3] [4] [5]
+<a href="{maccms:pagenext}">下一页</a>
+<a href="{maccms:pagelast}">尾页</a>
+{maccms:pageselect}下拉选择框
+
+****************************视频分类分页列表标签(视频搜索页,视频分页列表,视频专题页分页) 结束****************************
+
+****************************视频列表标签 开始****************************
+	num:数据条数  默认值10
+	state: 影片连载 series(连载) 
+	level：推荐种类 1,2,3,4,5 /all 
+	by:数据排序依据 id,addtime添加时间,time更新时间,hits总点击,dayhits日点击,weekhits周点击,monthhits月点击,level推荐值,good顶数,bad踩数,score评分数,scorecount评分次数, rnd随机数据，similar演员相似数据
+	order: 数据排序方式 desc(倒序) asc (正序)
+	type:数据所在分类,可调出多个分类数据,如 1,2,3/all,current列表页当前分类,默认为全部
+	topic:指定专题 1,2,3/all可调多个  默认无
+	start:起点位置  1  默认1
+	day:数据发布时间, 0 当天数据,具体数字表示哪天以来的数据. 7表示7天以来的数据
+	area: 所属地区   港台
+	lang: 所属语言   粤语
+	letter: 首字母   B
+	starring:调用主演的数据，如starring=刘德华
+例:
+{maccms:vodlist num=15 order=desc by=time type=all topic=1,2,3 level=1,2 start=5 area=大陆 lang=粤语 letter=A}
+	内部标签参数同vodpagelist部分，把[pagelist:替换为[vodlist:即可，  例如[vodlist:id]  [vodlist:name]
+{/maccms:vodlist}
+
+****************************视频列表标签 结束****************************
+
+****************************视频内容页、播放页标签 开始****************************
+	内部标签参数同vodpagelist部分，把[pagelist:替换为[vodinfo:即可， 例如[vodinfo:id]  [vodinfo:name]
+	[vodinfo:comment] 评论
+	[vodinfo:hits] 动态载入点击量并更新点击量，如不使用该标签点击量将不会增加
+	[vodinfo:fav] 收藏到浏览器链接
+	[vodinfo:share] 分享当前地址链接，复制到剪切板
+	[vodinfo:error] 报错链接
+	[vodinfo:error2] 弹窗报错链接
+	[vodinfo:goodmark] 顶一下功能
+	[vodinfo:badmark] 踩一下功能
+	[vodinfo:history] 历史记录标签，使用该标签才会记录浏览历史，否则不记录
+	[vodinfo:scoremark]  星星评分功能
+	[vodinfo:scorenummark]  动态读取评分总数
+	[vodinfo:scorepjfmark]  动态读取评分平均分
+	[vodinfo:scorecountmark] 读取评分总次数
+	[vodinfo:prelink] 上一条记录
+	[vodinfo:nextlink] 下一跳记录
+	
+12-2,播放页，下载页特有标签
+[playinfo:info]
+[playinfo:player]    这2个是播放器代码，必须有。
+-------------------非静态单播放页模式可以用标签--------------
+[playinfo:num]  当前第几集 
+[playinfo:name]  当前集数名称
+[playinfo:urlpath]  当前播放数据的真实播放地址
+[playinfo:from]  当前播放数据的来源标记  例如：youku
+[playinfo:fromshow] 当前播放数据的来源显示名称 例如：优酷视频
+-------------------------------------------------------------
+[downinfo:info]
+[downinfo:downer]    这2个是必须调用的代码。
+-------------------非静态单下载页模式可以用标签--------------
+[downinfo:num]      当前第几集 
+[downinfo:name]     当前集数名称
+[downinfo:urlpath]  当前数据的真实播放地址
+[downinfo:from]     当前数据的来源标记  例如：xunlei
+[downinfo:fromshow] 当前数据的来源显示名称 例如： 迅雷下载
+-------------------------------------------------------------
+
+
+12-3,播放列表标签，下载列表标签
+参数:
+	from:current 在播放页面可以只获取当前组的列表,不能用在静态模式生成单页中。
+{maccms:playlist}
+	[playlist:num] 序号
+	[playlist:count] 共有几组播放地址
+	[playlist:urlcount] 当前播放租共有多少条播放地址
+	[playlist:from] 播放组来源
+	[playlist:sort] 播放组排序号
+	[playlist:tip] 播放组提示说明
+	[playlist:show] 播放组名称
+	[playlist:server] 播放组-服务器组名称
+	[playlist:serversort] 播放组-服务器组排序号
+	[playlist:serverurl] 播放组-服务器组地址
+	[playlist:servertip] 播放组-服务器组提示信息
+	{maccms:urllist order=desc}     desc倒序,  asc正序
+		[urllist:num] 顺序号
+		[urllist:name]集数名称
+		[urllist:link]播放链接
+		[urllist:path]播放片源地址
+        {/maccms:urllist}
+{/maccms:playlist}
+
+参数:
+	from:current 在播放页面可以只获取当前组的列表,不能用在静态模式生成单页中。
+{maccms:downlist}
+	[downlist:num] 序号
+	[downlist:count] 共有几组播放地址
+	[downlist:urlcount] 当前播放租共有多少条播放地址
+	[downlist:from] 播放组来源
+	[downlist:sort] 播放组排序号
+	[downlist:tip] 播放组提示说明
+	[downlist:show] 播放组名称
+	[downlist:server] 播放组-服务器组名称
+	[downlist:serversort] 播放组-服务器组排序号
+	[downlist:serverurl] 播放组-服务器组地址
+	[downlist:servertip] 播放组-服务器组提示信息
+	{maccms:urllist order=desc}     desc倒序,  asc正序
+		[urllist:num] 顺序号
+		[urllist:name] 集数名称
+		[urllist:link] 下载链接
+		[urllist:path] 下载片源地址
+        {/maccms:urllist}
+{maccms:downlist}
+	
+{/maccms:downlist}
+****************************视频内容页、播放页标签 结束****************************
+
+****************************视频地区、语言标签 开始****************************
+
+地区列表：参数order 排列顺序desc倒序，asc正序
+	  参数type 为分类ID时，则会自动在搜索链接加入type参数，例如 search.php?area=大陆&type=1
+                   为auto时，非静态模式可用，只能用在分类列表页面，链接将自动加入本分类的一些参数包括，type,area,year,order,by 用户过滤本分类的数据
+{maccms:arealist order=desc}
+	[arealist:num] 排序位
+	[arealist:name] 地区名称
+	[arealist:link] 搜索链接地址
+{/maccms:arealist}
+
+例如：
+{maccms:arealist order=desc}
+	<a target="_blank" href="[arealist:link]">[arealist:name]</a>
+{/maccms:arealist}
+
+语言列表： 参数order 排列顺序desc倒序，asc正序
+{maccms:languagelist order=desc}
+	[languagelist:num] 排序位
+	[languagelist:id] 语言id
+	[languagelist:name] 语言名称
+	[languagelist:link] 搜索链接地址
+{/maccms:languagelist}
+
+例如：
+{maccms:languagelist order=desc}
+	<a href="[languagelist:link]">[languagelist:name]</a>
+{/maccms:languagelist}
+
+年代列表：参数order 排列顺序desc倒序，asc正序； start起始年代，end结束年代
+	  参数type 为分类ID时，则会自动在搜索链接加入type参数，例如 search.php?year=2012&type=1
+                   为auto时，非静态模式可用，只能用在分类列表页面，链接将自动加入本分类的一些参数包括，type,area,year,order,by 用户过滤本分类的数据
+例如：
+{maccms:yearlist order=desc start=2000 end=2012}
+	<a href="[yearlist:link]">[yearlist:name]</a>
+{/maccms:yearlist}
+
+****************************视频地区、语言标签 结束****************************
+
+
+
+
+
+****************************文章分类分页列表标签(文章搜索页,文章分页列表,文章专题页分页) 开始****************************
+参数:
+	num:每页数据条数  默认值12
+	by:数据排序依据 id,hits总点击,dayhits日点击,weekhits周点击,monthhits月点击,addtime添加时间,time更新时间
+	order: 数据排序方式 desc(倒序) asc (正序)
+	day:数据发布时间, 0 当天数据,具体数字表示哪天以来的数据. 7表示7天以来的数据
+	topic:数据所在分类,可调出多个分类数据,如 1,2,3/all,current列表页当前分类,默认为全部
+	day:数据发布时间, 0 当天数据,具体数字表示哪天以来的数据. 7表示7天以来的数据
+	type:数据所在分类,可调出多个分类数据,如 1,2,3/all,current列表页当前分类,默认为当前分类
+	level：推荐种类 1,2,3,4,5 /all 
+
+{maccms:artpagelist num=10 order=time}
+	[pagelist:num]排序位
+	[pagelist:numfill] 自动补位序号，个位数前补0
+	[pagelist:numjoin] 如使用start参数，则自动从start开始计数
+	[pagelist:id]编号
+	[pagelist:title]标题:可控长度
+	[pagelist:entitle]拼音标题:可控长度
+	[pagelist:letter] 首字母
+	[pagelist:subtitle]副标题:可控长度
+	[pagelist:colortitle]带颜色标题:可控长度
+	[pagelist:from]来源
+	[pagelist:content]内容
+	[pagelist:contenttext] 过滤html代码后内容
+	[pagelist:author]作者
+	[pagelist:color]颜色
+	[pagelist:level]推荐值
+	[pagelist:hit]总人气
+	[pagelist:dayhit]日人气
+	[pagelist:weekhit]周人气
+	[pagelist:monthhit]月人气
+	[pagelist:addtime]添加时间:可控时间格式 yy-m-d ,y-m-d , m-d 
+	[pagelist:time]更新时间:可控时间格式 yy-m-d ,y-m-d , m-d 
+	[pagelist:pic]图片
+        [pagelist:typename]分类名称
+	[pagelist:typelink]分类链接
+	[pagelist:link]链接
+{/maccms:artpagelist}
+
+分页同vodpagelist标签
+****************************文章分类分页列表标签(文章搜索页,文章分页列表,文章专题页分页) 结束****************************
+
+
+****************************文章列表标签 开始****************************
+num:数据条数  默认值10
+	by:数据排序依据 id,hits总点击,dayhits日点击,weekhits周点击,monthhits月点击,addtime添加时间,time更新时间
+	order: 数据排序方式 desc(倒序) asc (正序)
+	start:起点位置  1  默认1
+        type:文章分类id  1,2/all
+	topic:文章专题id   1,2/all
+	day:数据发布时间, 0 当天数据,具体数字表示哪天以来的数据. 7表示7天以来的数据
+	letter: 首字母
+	level：推荐种类 1,2,3,4,5 /all 
+例: 
+{maccms:artlist num=3 order=desc by=time type=1}
+	内部标签参数同artpagelist部分，把[pagelist:替换为[artlist:即可，  例如[artlist:id]   [artlist:title]
+{/maccms:artlist}
+
+****************************文章列表标签 结束****************************
+
+****************************文章内容页标签 开始****************************
+内部标签参数同artpagelist。例如[artinfo:id]
+[artinfo:hits]总点击量
+[artinfo:prelink] 上一条记录
+[artinfo:nextlink] 下一条记录
+[artinfo:page] 当前第几页
+文章内容分页标记[artinfo:page]
+调用分页标签，分页同vodpagelist标签
+****************************文章内容页标签 结束****************************
+
+
+
+
+
+****************************专题首页分页列表标签 开始****************************
+num:每页数据条数  默认值12
+	by:数据排序依据 id,sort 默认sort
+	order: 数据排序方式 desc(倒序) asc (正序)
+	table:必有参数vod则调用视频专题,art调用文章专题
+
+{maccms:topicpagelist num=6 table=vod id=all}
+	[pagelist:num] 数据排列位
+	[pagelist:name] 数据名称:可控制长度
+	[pagelist:enname] 数据英文名称
+	[pagelist:id] 数据ID
+	[pagelist:link] 数据链接
+	[pagelist:count] 专题数据数量
+	[pagelist:pic] 数据图片
+	[pagelist:des] 描述:可控制长度
+{/maccms:topicpagelist}
+
+分页同vodpagelist
+****************************专题首页分页列表标签 结束****************************
+
+****************************专题列表标签 开始****************************
+num:获取数据条数
+	id:all表示调出所有专题;id为指定专题ID表示调出某个专题;调出指定多个专题使用英文逗号隔开;默认值为all
+	by:数据排序依据 id,sort 默认sort
+	order: 数据排序方式 desc(倒序) asc (正序)
+	table:必有参数vod则调用视频专题,art调用文章专题
+例:
+{maccms:topiclist num=3 id=all/特定值/1,3 table=vod}
+	[topiclist:num]专题排序位
+	[topiclist:name]专题名称,支持长度控制 len
+	[topiclist:count]专题包含的影片数量
+	[topiclist:pic]专题图片
+	[topiclist:link]专题链接
+	[topiclist:des]专题描述,支持长度控制 len
+{/maccms:topiclist}
+
+****************************专题列表标签 结束****************************
+
+
+
+
+
+****************************自定义标签 开始****************************
+if标签 , 可以加入ASP函数
+例:
+{if:[vodinfo:num] > 1 }....{end if}
+{if:[vodinfo:num] mod 2=0}....{else}....{end if}
+{if:[vodinfo:num] mod 2=0}....{elseif}....{else}....{end if}
+
+{if:not isN("[vodlist:remarks]")}
+   [vodlist:remarks]
+{elseif:[vodlist:state]=0}
+   [完结]
+{elseif:[vodlist:state]>0}
+   [连载[vodlist:state]]
+{else}
+{end if}
+
+****************************自定义标签 结束****************************
+
+
+****************************用户登陆页面标签 开始****************************
+
+用户登录窗口调用方法
+<iframe src="user/login.php" frameborder="0"  scrolling="no" width="100%" height="25"></iframe>
+
+{maccms:userid}        会员ID
+{maccms:username}      会员名
+{maccms:userqq}        QQ号码
+{maccms:useremail}     email地址
+{maccms:userphone}     电话
+{maccms:userregtime}   注册时间
+{maccms:userpoints}    剩余点数
+{maccms:userlogintime}   最后登录时间
+{maccms:userloginnum}    总登录次数
+{maccms:usertj}          推荐人数
+{maccms:usergroupid}     会员组ID
+{maccms:usergroupname}   会员组名称
+{maccms:userloginip}     最后登录IP
+
+例如：
+
+<DIV class=p-nav>
+<UL>
+<LI>{username}，欢迎您回来！ </LI>
+<LI>推荐人数：{userpopularizenum} </LI>
+<LI>账户积分：{userpoints} </LI>
+<LI>用户短信：{usermsgcount} </LI>
+<LI>登陆时间：{userlogintime} </LI>
+<LI><A href="index.php?action=main" target="_blank">进入用户中心</A></LI>
+<LI><A href="index.php?action=logout">退出</A> </LI>
+</UL>
+</DIV>
+
+****************************用户登陆页面标签 结束****************************
+

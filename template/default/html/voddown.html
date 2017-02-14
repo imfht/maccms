@@ -1,0 +1,24 @@
+<!DOCTYPE HTML PUBliC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3c.org/TR/1999/REC-html401-19991224/loose.dtd">
+<HTML xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>[vodinfo:name] [downinfo:name] 下载地址 - {maccms:name}</title>
+<meta name="keywords" content="[vodinfo:name][downinfo:name],[vodinfo:typename],{maccms:name}">
+<meta name="description" content="[vodinfo:name][downinfo:name],[vodinfo:typename],{maccms:name}">	
+<script>var maccms_path = "{maccms:path}";</script>
+<script src="{maccms:path}js/jquery.js"></script>
+<script src="{maccms:path}js/jquery.autocomplete.js"></script>
+<script src="{maccms:path}js/function.js"></script>
+<script src="{maccms:path}js/player.js"></script>
+</head>
+<body>
+[downinfo:info]
+[downinfo:downer]
+<script>
+$(document).ready(function(){
+	//alert(MacPlayer.playurl); //弹出提示显示下载地址
+	location.href = MacPlayer.playurl;  //转向到下载地址
+});
+</script>
+</body>
+</html>

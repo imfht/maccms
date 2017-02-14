@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<players>
+	<player status="1" sort="480" from="qvod" show="快播qvod" des="qvod.com"><tip><![CDATA[<a href="http://union.maccms.com/html/qvod.html" target="_blank">需要下载快播QVOD播放器</a>]]></tip></player>
+	<player status="1" sort="460" from="xigua" show="西瓜影音" des="xigua.com"><tip><![CDATA[<a href="http://union.maccms.com/html/xigua.html" target="_blank">需要下载西瓜影音播放器</a>]]></tip></player>
+	<player status="1" sort="450" from="xfplay" show="先锋影音" des="xfplay.com"><tip><![CDATA[<a href="http://union.maccms.com/html/xfplay.html" target="_blank">需要下载先锋影音播放器</a>]]></tip></player>
+	<player status="1" sort="440" from="jjvod" show="吉吉影音" des="jijizy.com"><tip><![CDATA[<a href="http://union.maccms.com/html/jjvod.html" target="_blank">需要下载吉吉影音播放器</a>]]></tip></player>
+	
+	<player status="1" sort="436" from="fvod" show="肥佬影音" des="www.feilao.com"><tip><![CDATA[<a href="http://union.maccms.com/html/fvod.html" target="_blank">需要下载肥佬影音播放器</a>]]></tip></player>
+	<player status="1" sort="435" from="ffhd" show="非凡影音" des="www.feifan.com"><tip><![CDATA[<a href="http://union.maccms.com/html/ffhd.html" target="_blank">需要下载非凡影音播放器</a>]]></tip></player>
+	<player status="1" sort="434" from="niba" show="泥巴影音" des="www.nbplay.com"><tip><![CDATA[<a href="http://union.maccms.com/html/niba.html" target="_blank">需要下载泥巴影音播放器</a>]]></tip></player>
+	
+	<player status="1" sort="433" from="kkhd" show="可可影音" des="www.kekeplay.com"><tip><![CDATA[<a href="http://union.maccms.com/html/kkhd.html" target="_blank">需要下载可可影音播放器</a>]]></tip></player>
+	
+	<player status="1" sort="432" from="SNSPlay" show="SNSPlay" des="www.SNSPlay.com"><tip><![CDATA[<a href="http://union.maccms.com/html/SNSPlay.html" target="_blank">需要下载SNSPlay播放器</a>]]></tip></player>
+	
+	<player status="1" sort="431" from="kankan" show="迅雷看看" des="www.kankan.com"><tip><![CDATA[<a href="http://union.maccms.com/html/kankan.html" target="_blank">需要下载迅雷看看播放器</a>]]></tip></player>
+	
+	<player status="1" sort="430" from="gvod" show="迅播gvod" des="gvod.xunlei.com"><tip><![CDATA[<a href="http://union.maccms.com/html/gvod.html" target="_blank">需要下载讯播GVOD播放器</a>]]></tip></player>
+	<player status="1" sort="420" from="cool" show="酷播cool" des="mycoolplay.com"><tip><![CDATA[<a href="http://union.maccms.com/html/cool.html" target="_blank">需要下载酷播播放器</a>]]></tip></player>
+	<player status="1" sort="410" from="baidu" show="百度影音" des="play.baidu.com"><tip><![CDATA[<a href="http://union.maccms.com/html/baidu.html" target="_blank">需要下载百度影音播放器</a>]]></tip></player>
+	
+	<player status="1" sort="390" from="youku" show="优酷视频" des="youku.com"><tip><![CDATA[无需安装任何插件]]></tip></player>
+	<player status="1" sort="380" from="56" show="我乐视频" des="56.com"><tip><![CDATA[无需安装任何插件]]></tip></player>
+	<player status="1" sort="370" from="tudou" show="土豆视频" des="tudou.com"><tip><![CDATA[无需安装任何插件]]></tip></player>
+	<player status="1" sort="360" from="ku6" show="酷6视频" des="ku6.com"><tip><![CDATA[无需安装任何插件]]></tip></player>
+	<player status="1" sort="350" from="qq" show="腾讯视频" des="v.qq.com"><tip><![CDATA[无需安装任何插件]]></tip></player>
+	<player status="1" sort="340" from="sohu" show="搜狐视频" des="v.sohu.com"><tip><![CDATA[无需安装任何插件]]></tip></player>
+	<player status="1" sort="330" from="joy" show="激动网" des="joy.cn"><tip><![CDATA[无需安装任何插件]]></tip></player>
+	<player status="1" sort="320" from="qiyi" show="奇艺视频" des="qiyi.com"><tip><![CDATA[无需安装任何插件]]></tip></player>
+	<player status="1" sort="310" from="letv" show="乐视视频" des="letv.com"><tip><![CDATA[无需安装任何插件]]></tip></player>
+	<player status="1" sort="300" from="funshion" show="风行视频" des="funshion.com"><tip><![CDATA[无需安装任何插件]]></tip></player>
+	<player status="1" sort="260" from="tudouhd" show="土豆(高清)" des="hd.tudou.com"><tip><![CDATA[无需安装任何插件]]></tip></player>
+	<player status="1" sort="250" from="sohuhd" show="搜狐(高清)" des="tv.sohu.com"><tip><![CDATA[无需安装任何插件]]></tip></player>
+	<player status="1" sort="240" from="ku6hd" show="酷6(高清)" des="hd.ku6.com"><tip><![CDATA[无需安装任何插件]]></tip></player>
+	<player status="1" sort="220" from="sinahd" show="新浪(高清)" des="video.sina.com.cn"><tip><![CDATA[无需安装任何插件]]></tip></player>
+	<player status="1" sort="210" from="pptv" show="pptv" des="pptv.com"><tip><![CDATA[无需安装任何插件]]></tip></player>
+	
+	<player status="1" sort="200" from="swf" show="Flash文件" des="swf"><tip><![CDATA[无需安装任何插件]]></tip></player>
+	<player status="1" sort="190" from="flv" show="Flv文件" des="flv"><tip><![CDATA[无需安装任何插件]]></tip></player>
+	
+	<player status="1" sort="120" from="real" show="RealPlaer播放器" des="real.cn"><tip><![CDATA[需要电脑安装RealPlayer播放器]]></tip></player>
+	<player status="1" sort="110" from="media" show="MediaPlayer播放器" des="mediaplayer"><tip><![CDATA[无需安装任何插件]]></tip></player>
+	<player status="1" sort="10" from="link" show="外链数据" des="外部网站播放链接"><tip><![CDATA[无需安装任何插件]]></tip></player>
+</players>

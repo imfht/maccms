@@ -1,0 +1,1 @@
+﻿document.writeln('<img name="ad" src="" width="980" height="90" alt="head预留广告位" style="background-color: #CCCCCC" />');

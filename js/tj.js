@@ -1,0 +1,1 @@
+﻿document.writeln('<script src="http://s94.cnzz.com/stat.php?id=420039&web_id=420039" language="JavaScript"></script>');

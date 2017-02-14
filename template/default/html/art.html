@@ -1,0 +1,97 @@
+<!DOCTYPE HTML PUBliC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3c.org/TR/1999/REC-html401-19991224/loose.dtd">
+<HTML xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<TITLE>[artinfo:title]_{maccms:name}</TITLE>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link type="text/css" rel="stylesheet" href="{maccms:templatepath}images/kuniao.css">
+<link type="text/css" rel="stylesheet" href="{maccms:templatepath}images/art.css">
+<meta name="keywords" content="[artinfo:title],{maccms:name}">
+<meta name="description" content="[artinfo:title],{maccms:name}">
+<script>var maccms_path = "{maccms:path}"</script>
+<script src="{maccms:path}js/jquery.js"></script>
+<script src="{maccms:path}js/jquery.autocomplete.js"></script>
+<script src="{maccms:path}js/function.js"></script>
+<script src="{maccms:templatepath}images/js/kuniao.js"></script>
+</head>
+<body>
+<!--头部开始-->
+{maccms:head}
+<div class="area" id="contentA">
+	
+<div class="left">
+<div class="bord rmCont">
+	<div class="title"><center><h1>[artinfo:title] </h1></center></div>
+	<div class="starShow">
+		<ul class="auther">
+		作　　者：[artinfo:author]&nbsp;&nbsp;&nbsp;&nbsp;
+		来源:[artinfo:from]&nbsp;&nbsp;&nbsp;&nbsp;
+		分类:[artinfo:typename]&nbsp;&nbsp;&nbsp;&nbsp;
+		增加时间:[artinfo:time]&nbsp;&nbsp;&nbsp;&nbsp;
+		人气:[artinfo:hits]
+		</ul>
+	</div>
+	
+	<div class="text">
+		[artinfo:content]<br> 
+		<div class="jumpB clear">
+			<a class="pa" href="{maccms:pagefirst}">首页</a>
+			<a href="{maccms:pagepre}">上一页</a>{maccms:pagenum len=8}<a href="{maccms:pagenext}">下一页</a>
+			<a class="pa" href="{maccms:pagelast}">尾页</a>
+		    {maccms:pagenow}/{maccms:pagecount}页
+		</div>
+	</div>
+	
+	<div class="state c3">
+		<span class="r tip1">
+		<!-- JiaThis Button BEGIN -->
+		<span class="urlIcon" id="ckepop">
+		<span class="jiathis_txt">分享到：</span>
+		    <a class="jiathis_button_qzone"></a>
+			<a class="jiathis_button_tsina"></a>
+			<a class="jiathis_button_tqq"></a>
+			<a class="jiathis_button_renren"></a>
+			<a class="jiathis_button_kaixin001"></a>
+			<a class="jiathis_button_mixx"></a>
+			<a class="jiathis_button_189cn"></a>
+			<a href="http://www.jiathis.com/share" class="jiathis jiathis_txt jtico jtico_jiathis" target="_blank"></a>
+		    <a class="jiathis_counter_style"></a>
+		</span>
+		<!-- JiaThis Button END -->
+		| <em class="serBtn"><a recommend="true" href="#" class="jiathis_button_icons_2" id="recommendbox" needlogin="true">推荐给粉丝</a> | <a class="a7" href="#" onClick="sitefav(window.location.href,'[artinfo:title]');return false;">收藏</a> | <a href="#maccms_comment" target="_self" class="a2" needlogin="true">写评论</a></em>
+		</span>
+		<script type="text/javascript" src="http://v2.jiathis.com/code/jia.js" charset="utf-8"></script>
+	</div>
+	
+	<div id="remarkBox" class="ku_remark">
+	[artinfo:mood]
+		<div class="clear"></div>
+		<div class="replyBox">
+			<div class="bt">评论</div>
+			<div>[artinfo:comment]</div>
+		</div>
+	</div>
+</div>
+</div>
+
+<div class="right">
+	<script src="{maccms:templatepath}ads/250x250-art.js"></script>
+	<div class="bord rmOther">
+		<div class="kuniaoFun">
+			<div class="tag"></div>
+			<div class="tInfo"><strong>最新文章阅读</strong></div>
+			<div class="blank12H"></div>
+		</div>
+		<div class="conts">
+			<ul class="listE" id="otherEntry">
+			{maccms:artlist num=15 by=time order=desc}
+			<li><span class="t"><a href="[artlist:link]" title="[artlist:title]">[artlist:title len=16]</a></span><span class="ti">[artlist:time]</span></li>
+			{/maccms:artlist}
+			</ul>
+			<div class="blank12H"></div>
+		</div>
+	</div>
+</div>
+</div>
+{maccms:foot}
+</body>
+</html>

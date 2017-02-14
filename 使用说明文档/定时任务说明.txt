@@ -1,0 +1,68 @@
+定时采集联盟资源库  (注意：此接口只采集一页的数据)
+===========================================================================
+参数说明
+action=cjday采集当天数据，cjtype采集分类分类,cjall采集所有数据
+rtype=采集分类
+rpage=采集第几页
+rday=1 采集几天内的数据
+cjurl=采集接口地址
+clflag=采集接口唯一标示
+xt=采集接口类型 ， xt=1时需要参数cjflag，采集当天rday=24。  xt为空时，采集当天rday=1。
+任务脚本文件：timming_maccj.php
+
+实例讲解：
+1， 进入联盟资源库，找到需要采集的资源，在【采集当天】上鼠标右键，把地址复制下来
+例如【哈库资源】：http://www.xxxx.com/admin/admin_maccj.php?action=cjday&rday=24&xt=1&cjflag=106_&cjurl=http://hakuzy.com/xml/maxresxml.php
+采集当天数据的写法：
+执行参数：action=cjday&rday=24&xt=1&cjflag=106_&cjurl=http://hakuzy.com/xml/maxresxml.php
+
+例如：【八度影音】：http://www.xxxx.com/admin/admin_maccj.php?action=cjday&rday=1&cjurl=http://www.bdzy.cc/xml/
+采集当天数据的写法：
+执行参数：action=cjday&rday=1&cjurl=http://www.bdzy.cc/xml/
+
+============================================================================
+
+定时生成脚本 (注意：生成时，比较占用系统资源)
+============================================================================
+任务脚本文件：timming_makehtml.php
+
+
+action=index&flag=vod   生成首页
+action=index&flag=art   生成文章首页
+action=map&flag=vod     生成地图页
+action=map&flag=art     生成文章地图页
+
+
+action=googlexml&gallmakenum=100  生成谷歌xml
+action=baiduxml&ballmakenum=100   生成百度xml
+action=rssxml&rallmakenum=100     生成rss
+action=otherday                   一键生成首页-地图页-xml页
+
+
+action=diypage&fname=label_hotsearch.html    生成指定自定义页面
+
+
+action=viewday&flag=vod&action2=     生成当天更新的视频内容页面； action2=all时,同时生成分类页面
+action=viewnomake&flag=vod&action2=     生成未生成过的视频内容页面
+
+
+action=typeday&flag=vod&action2=     生成当天更新的视频分类页面； action2=all时，每个分类只生成5页内容，提高效率
+action=type&flag=vod&mtype=1         生成指定视频分类列表
+
+
+action=viewday&flag=art&action2=     生成当天更新的文章内容页面； action2=all时,同时生成分类页面
+action=viewnomake&flag=art&action2=     生成未生成过的文章内容页面 
+
+
+action=typeday&flag=art&action2=     生成当天更新的文章分类页面； action2=all时，每个分类只生成5页内容，提高效率
+action=type&flag=art&mtype=1         生成指定文章分类列表
+
+
+action=topicindex&flag=vod         生成视频专题首页
+action=topic&flag=vod&mtopic=1     生成指定视频专题列表
+
+
+action=topicindex&flag=art         生成文章专题首页
+action=topic&flag=art&mtopic=1     生成指定文章专题列表
+
+============================================================================

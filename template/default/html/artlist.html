@@ -1,0 +1,68 @@
+<!DOCTYPE HTML PUBliC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3c.org/TR/1999/REC-html401-19991224/loose.dtd">
+<HTML xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<TITLE>{typepage:name} 第{maccms:pagenow}页_{maccms:name}</TITLE>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="keywords" content="{typepage:name},{typepage:key}" />
+<meta name="description" content="{typepage:name},{typepage:des}" />
+<link type="text/css" rel="stylesheet" href="{maccms:templatepath}images/kuniao.css">
+<link type="text/css" rel="stylesheet" href="{maccms:templatepath}images/art.css">
+<script>var maccms_path = "{maccms:path}"</script>
+<script src="{maccms:path}js/jquery.js"></script>
+<script src="{maccms:path}js/jquery.autocomplete.js"></script>
+<script src="{maccms:path}js/function.js"></script>
+<script src="{maccms:templatepath}images/js/kuniao.js"></script>
+</head>
+<body>
+{maccms:head}
+<div class="area" id="kuniao_on">
+	<div class="left"><h1 class="color3">{maccms:name}&gt;&gt;<a href="{maccms:artindexlink}">文章频道</a>&gt;&gt;{typepage:name}</h1></div>
+</div>
+<div class="area" id="kuniaoA">
+	<div class="left">
+		<div class="block_ku bord clear" id="blockA">
+			<div class="tab1 clear">
+				<a name="pllist_full"> </a>
+				<ul><li class="tk3 active"><a>{typepage:name}</a></li></ul>
+			</div>
+			
+			<div class="blank12H"></div>
+			<div class="tab1cont" style="display: block; ">
+				<div id="ablum2">
+					<div class="pagecont" style="display: block; ">
+					{maccms:artpagelist num=10 type=current by=time order=desc}
+					<div class="listJs"><div class="bti"><h3><span>[pagelist:title len=20]</span></h3> </div><div class="wz">[pagelist:contenttext len=130]</div><div class="wz"><a target="_blank" href="[pagelist:link]" class="btns9" onMouseOver="this.className=&#39;btns9 btns9Over&#39;" onMouseOut="this.className=&#39;btns9 btns9Out&#39;" onMouseDown="this.className=&#39;btns9 btns9Down&#39;">详 情</a> 作者：[pagelist:author]&nbsp;&nbsp;发布时间：[pagelist:time]&nbsp;&nbsp;来源：[pagelist:from]</div></div>
+					{/maccms:artpagelist}
+					</div>  
+					<div class="jumpB clear">
+					<a class="pa" style="padding-left:5px" href="{maccms:pagefirst}">首页</a>
+					<a href="{maccms:pagepre}">上一页</a>{maccms:pagenum len=8}<a href="{maccms:pagenext}">下一页</a>
+					<a class="pa" style="padding-left:5px" href="{maccms:pagelast}">尾页</a>
+					{maccms:pagenow}/{maccms:pagecount}页 {maccms:pagesize}条/每页
+					{maccms:pageselect}
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="blank12H"></div>
+	</div>
+
+	<div class="right">
+		<script src="{maccms:templatepath}ads/300x250-3.js"></script>
+		<script src="{maccms:templatepath}ads/300x250-4.js"></script>
+		<div class="blank12H"></div>
+			<div class="blockRE bord clear">
+				<h2><span>您可能喜欢阅读</span></h2>
+				<div class="pp">
+					<ul id="similar">{maccms:artlist num=10 type=current by=hitss oredr=desc}
+					<li><a index="0" class="pic" target="_blank" href="[artlist:link]"><img alt="[artlist:title] " src="[artlist:pic]" width="80" height="60" onerror="src='{maccms:templatepath}images/nopic.gif'"></a><dl><dt><a target="_blank" href="[artlist:link]">[artlist:title len=12]</a></dt><dd class="d1">作者：[artlist:author]</dd><dd class="d1">来源：[artlist:from]</dd></dl></li>
+					{/maccms:artlist}
+					</ul>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+{maccms:foot}
+</body>
+</html>

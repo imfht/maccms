@@ -1,0 +1,39 @@
+﻿<html>
+<head>
+<title>中文urlencode编码</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="../../images/admin.css" />
+<link rel="stylesheet" type="text/css" href="../../images/default/easyui.css" />
+<link rel="stylesheet" type="text/css" href="../../images/icon.css" />
+<script type="text/javascript" src="../../js/jquery.js"></script>
+<script type="text/javascript" src="../../js/jquery.validate.js"></script>
+<script type="text/javascript" src="../../js/jquery.easyui.min.js"></script>
+<script type="text/javascript" src="../../js/admin/admin.js"></script>
+<style type="text/css">
+ body{margin:0}
+ textarea{width:760;height:180;font-size:9pt;font-family:Courier New;color:#666666}
+td,body {  font-size: 14pt}
+a:link{ color:#000000; text-decoration:none}
+a:visited{COLOR: #000000; TEXT-DECORATION: none}
+a:active{color:green;text-decoration:none}
+a:hover{color:red;text-decoration:underline}
+</style>
+</head>
+<body leftmargin="0" topmargin="0" marginwidth="0" marginheight="0">
+<div align="center">
+  <a href="htmltojs.html">html转js</a> | <a href="jstohtml.html">js转html</a> | <a href="urlencode.html">url编码</a> | <a href="urldecode.html">url解码</a> <br><br>
+  请将UTF8格式URL编码关键字拷贝到下面表单中: <br>
+    <textarea id="oResult"  onpropertychange="rechange()" ondblclick='this.select();oResult.createTextRange().execCommand("Copy")' title="双击复制" cols="99" rows="12"></textarea>  
+    <br><br>
+    下面表单中是相应的解码后代码: <br />
+    <textarea id="Re" ondblclick='this.select();this.createTextRange().execCommand("Copy")' title="双击复制" cols="99" rows="30"></textarea>
+    <script>
+ function rechange(){
+ 	Re.value = unescape ( decodeURI( decodeURIComponent(oResult.value) ) ) ;
+ }
+  </script>
+  <br>
+  例如 search.php?starring=%E5%88%98%E5%BE%B7%E5%8D%8E   解码后应该是：  search.php?starring=刘德华 
+</div>
+</body>
+</html>

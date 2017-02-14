@@ -1,0 +1,107 @@
+<!DOCTYPE HTML PUBliC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3c.org/TR/1999/REC-html401-19991224/loose.dtd">
+<HTML xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<TITLE>搜索《{searchpage:key}》关键词</TITLE>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta name="keywords" content="{maccms:search},{maccms:name}">
+<meta name="description" content="{maccms:search},{maccms:name}">
+<link type="text/css" rel="stylesheet" href="{maccms:templatepath}images/kuniao.css">
+<link type="text/css" rel="stylesheet" href="{maccms:templatepath}images/vod.css">
+<script>var maccms_path = "{maccms:path}";</script>
+<script src="{maccms:path}js/jquery.js"></script>
+<script src="{maccms:path}js/jquery.autocomplete.js"></script>
+<script src="{maccms:path}js/function.js"></script>
+<script src="{maccms:templatepath}images/js/kuniao.js"></script>
+<script src="{maccms:templatepath}images/js/fenlei.js"></script>
+</head>
+<body>
+{maccms:head}
+<div id="contentA" class="area">
+	<div class="left">
+		<div class="indexMenu bord clear">
+			<ul>
+			<li class="now">{maccms:name}高清电影&gt;&gt;</li>
+			{maccms:menulist type=child order=asc}
+			<li><a title='[menulist:name]' href="[menulist:link]" class="more">[menulist:name]</a></li>
+			{/maccms:menulist}
+			<li class="now">{maccms:name}文章阅读&gt;&gt;</li>
+			{maccms:menulist table=art}
+			<li><a href="[menulist:link]">[menulist:name]</A></li>
+			{/maccms:menulist}
+			</ul>
+		</div>
+	</div>
+<div class="right">
+	<div class="seleRe bord clear">
+		<div class="l"><STRONG>搜索关键词结果共有&nbsp;&nbsp;<FONT color=#ff0000>{maccms:pagedata}</FONT>&nbsp;部影片</STRONG></div>
+			<div class="c">
+				<div class="cc ll">《{searchpage:des}》</div>
+			</div>
+			<div class="r"></div>
+		</div>
+		<div class="seaKey bord clear" id="seaKey">
+			<ul>
+			<li><span>产地：</span></li>
+			<li class="now"><a href="{maccms:path}" title="">全部</a></li>
+			{maccms:arealist order=asc}
+			<li><a href="[arealist:link]">[arealist:name]</a></li>
+			{/maccms:arealist}
+			</ul>
+			<ul>
+			<li><span>年份：</span></li>
+			<li class="now"><a href="{maccms:path}">全部</a></li>
+			{maccms:yearlist start=2000 end=2013 order=desc}
+			<li><a href="[yearlist:link]">[yearlist:name]</a></li>
+			{/maccms:yearlist}
+			</ul>
+			<ul>
+			<li><span>明星：</span></li>
+			<li class="now"><a href="{maccms:path}">全部</a></li>
+			{label:starring.html}
+			</ul>
+		</div>
+		<div class="shLay" id="shid"></div>
+		<div class="menuC">
+			<div class="l">
+				<ul>
+				<li class="libg">&gt;&gt;&nbsp;结果</li>
+				</ul>
+			</div>
+		</div>
+		<div class="jsonPP clear" id="videoData">
+			<div class="vData clear">
+			{maccms:vodpagelist num=20 by=time order=desc}
+			<div class="vInfo">
+			<div class="vPic">
+			<a href="[pagelist:link]" target="_blank">
+			<img src="[pagelist:pic]" width="120" height="164" alt="">
+			</a>
+			<div class="label"><i></i><em>人气:[pagelist:hits]</em></div>
+			<span class="cq_ico"></span>
+			<div style="display:none;" class="popInfo">
+			<div class="popBG"></div>
+			<div class="popLay">
+			<h4><a href="[pagelist:link]" target="_blank">[pagelist:name len=10]</a></h4>
+			<p>主演：<strong>[pagelist:starring len=10]</strong></p>
+			<p>[pagelist:contenttext len=100] ...<a href="[pagelist:playlink]" target="_blank">[观看]</a></p>
+			</div></div></div>
+			<div class="vTxt">
+			<h4><a href="[pagelist:link]" target="_blank">[pagelist:name len=8]</a></h4>
+			<p>主演：[pagelist:starring len=6]</p>
+			</div></div>
+			{/maccms:vodpagelist}
+			</div>
+			<div class="jumpB clear">
+				<a class="pa" style="padding-left:5px" href="{maccms:pagefirst}">首页</a>
+				<a href="{maccms:pagepre}">上一页</a>{maccms:pagenum len=8}<a href="{maccms:pagenext}">下一页</a>
+				<a class="pa" style="padding-left:5px" href="{maccms:pagelast}">尾页</a>
+				{maccms:pagenow}/{maccms:pagecount}页 {maccms:pagesize}条/每页
+				{maccms:pageselect}
+			</div>
+		</div>
+	</div>
+</div>
+</div>
+{maccms:foot}
+</body>
+</html>

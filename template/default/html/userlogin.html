@@ -1,0 +1,24 @@
+<style type="text/css">
+<!--
+.tx,.btn{background:url({maccms:templatepath}images/lnk.png) no-repeat;}
+.tx{width:312px;color:#c1c1c1;height:18px;line-height:18px;border:0;margin:6px 7px;}
+.form{padding-left:11px;}
+.form p{margin:0 0 6px;line-height:25px;}
+.form code{width:50px;display:inline-block;}
+.form .jzw{margin-top:-1px;*margin-top:-4px;vertical-align:middle;}
+.tx{vertical-align:middle;background-position:0 -127px;border:1px solid #bcbcbc;margin-right:5px;width:123px;color:#828282;padding:0 5px;line-height:21px;height:21px;}
+.btn{background-position:0 -154px;color:#fff;cursor:pointer;padding:0 0 3px;padding:0;border:0;width:61px;height:26px;vertical-align:middle;}
+a{color:#5a5a5a;text-decoration:none;}
+a:hover{color:#dd0d0b;text-decoration:underline;}
+.blank12H{height:10px;clear:both;font-size:0}
+-->
+</style>
+<div class="form"><form action="{maccms:path}user/?action=check" id="loginform" name="loginform" method="post"> 
+<div></div>
+<p>账&nbsp;&nbsp;号：<input type="text" class="tx" name="u_name" value=""></p>
+<p>密&nbsp;&nbsp;码：<input class="tx" name="u_password" type="password"></p>
+<p> <a href="{maccms:path}user/?action=reg&ref=qqlogin" target="_blank"><img border=0 src="{maccms:path}images/qq_login.png" style="vertical-align:middle;"></a>&nbsp;<input type="submit" alt="登 录" onFocus="return checklg()" value="登 录" class="btn"> 
+</p>
+<p align=center><a href="{maccms:userreglink}" target="_blank">免费注册</a>
+&nbsp;&nbsp;<a href="{maccms:userfindpasslink}" target="_blank">密码找回</a></p>
+</form>

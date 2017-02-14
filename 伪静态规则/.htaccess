@@ -1,0 +1,30 @@
+# 将 RewriteEngine 模式打开
+RewriteEngine On
+# 修改以下语句中的 /maccms 为你的网站目录地址，如果程序放在根目录中，请将 /maccms 修改为 /
+RewriteBase /
+# Rewrite 系统规则请勿修改
+
+RewriteRule ^map.html$ map.php$1
+
+RewriteRule ^artmap.html$ artmap.php$1
+
+RewriteRule ^(.*)vodlisthtml/(.+?)\.html$ $1vodlist/index.php\?$2\.html
+
+RewriteRule ^(.*)vodhtml/(.+?)\.html$ $1vod/index.php\?$2\.html
+
+RewriteRule ^(.*)vodplayhtml/(.+?)\.html$ $1vodplay/index.php\?$2\.html
+
+RewriteRule ^(.*)voddownhtml/(.+?)\.html$ $1voddown/index.php\?$2\.html
+
+RewriteRule ^(.*)vodtopichtml/(.+?)\.html$ $1vodtopic/index.php\?$2\.html
+
+RewriteRule ^(.*)vodtopicindex/(.+?)\.html$ $1vodtopicindex/index.php\?$2\.html
+
+RewriteRule ^(.*)artlisthtml/(.+?)\.html$ $1artlist/index.php\?$2\.html
+
+RewriteRule ^(.*)arthtml/(.+?)\.html$ $1art/index.php\?$2\.html
+
+RewriteRule ^(.*)arttopichtml/(.+?)\.html$ $1arttopic/index.php\?$2\.html
+
+RewriteRule ^(.*)arttopicindex/(.+?)\.html$ $1arttopicindex/index.php\?$2\.html
+

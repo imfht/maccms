@@ -1,0 +1,31 @@
+<!DOCTYPE HTML PUBliC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3c.org/TR/1999/REC-html401-19991224/loose.dtd">
+<HTML xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title> 在线播放页面 - {maccms:name}</title>
+<meta name="keywords" content="[vodinfo:name][playinfo:name],[vodinfo:typename],{maccms:name}">
+<meta name="description" content="[vodinfo:name][playinfo:name],[vodinfo:typename],{maccms:name}">
+<link type="text/css" rel="stylesheet" href="{maccms:templatepath}images/kuniao.css">
+<link href="{maccms:templatepath}/images/play.css" rel="stylesheet" type="text/css">
+<script>var maccms_path = "{maccms:path}";</script>
+<script src="{maccms:path}js/jquery.js"></script>
+<script src="{maccms:path}js/jquery.autocomplete.js"></script>
+<script src="{maccms:path}js/function.js"></script>
+<script src="{maccms:path}js/player.js"></script>
+<script>
+var strUrlQS=getQS('html');
+var playdatafile = maccms_path+'upload/playdata/'+strUrlQS[0]+'/'+strUrlQS[0] + '.js';
+document.write('<scr'+'ipt language="javascript" src="'+maccms_path+'upload/playdata/'+strUrlQS[0]+'/'+strUrlQS[0] + '.js"></scr'+'ipt>');
+</script>
+</head>
+<body>
+{maccms:head}
+<div class="blank12H"></div>
+<div id="contentA" class="area kuniao">
+<script>
+getPlayer(strUrlQS[1],strUrlQS[2]);
+</script>
+</div>
+{maccms:foot}
+</body>
+</html>

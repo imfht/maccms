@@ -1,0 +1,15 @@
+<script type="text/javascript" src="storm.js?rev=20110725" charset="utf-8"></script>
+<script language="javascript">
+storm.onPlayerFinish = function() {
+	document.getElementById('bf_Player').addUrl(parent.MacPlayer.playurl, true, 0, 0);
+	document.getElementById('bf_Player').play();
+}
+function OnLoad(){
+	str = storm.html(parent.MacPlayer.playurl,"100%",703, parent.location.href);
+	document.getElementById('divPlayerObj').innerHTML = str;
+}
+
+</script>
+<body topmargin="0" leftmargin="0" oncontextmenu="return false" onLoad="OnLoad();">
+<div id="divPlayerObj" width="100%" height="100%"></div>
+</body>

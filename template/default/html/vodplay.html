@@ -1,0 +1,142 @@
+<!DOCTYPE HTML PUBliC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3c.org/TR/1999/REC-html401-19991224/loose.dtd">
+<HTML xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>[vodinfo:name] [playinfo:name] - {maccms:name}</title>
+<meta name="keywords" content="[vodinfo:name][playinfo:name],[vodinfo:typename],{maccms:name}">
+<meta name="description" content="[vodinfo:name][playinfo:name],[vodinfo:typename],{maccms:name}">
+<link type="text/css" rel="stylesheet" href="{maccms:templatepath}images/kuniao.css">
+<link href="{maccms:templatepath}/images/play.css" rel="stylesheet" type="text/css">
+<script>var maccms_path = "{maccms:path}"</script>
+<script src="{maccms:path}js/jquery.js"></script>
+<script src="{maccms:path}js/jquery.autocomplete.js"></script>
+<script src="{maccms:path}js/function.js"></script>
+<script src="{maccms:path}js/player.js"></script>
+<script src="{maccms:templatepath}images/js/kuniao.js"></script>
+</head>
+<body>
+{maccms:head}
+<div id=contentA class=area>
+<div class=left>
+	<div class="videoInfo bordB clear">
+		<div id=contentAD></div>
+		<div id=video>
+			<div id=dragdiv>
+				<div id=rRightDown></div>
+				<div id=sohuplayer>[playinfo:info][playinfo:player]</div>
+			</div>
+		</div>
+		<div class="fun clear">
+			<div class=l>
+				<A class=a1 href="javascript:void(0)" onClick="vodGood([vodinfo:id],'good_num');return false;"><SPAN>顶<EM id="good_num">[vodinfo:good]</EM></SPAN></A>
+				<A class=a2 href="javascript:void(0)" onClick="vodBad([vodinfo:id],'good_num');return false;"><SPAN>踩<EM id="bad_num">[vodinfo:bad]</EM></SPAN></A> 
+				<A id=shareBtn class=a3 class="jiathis_button_tqq" href="javascript:void(0)" onclick="copyData(document.title +'   ' + window.location.href);return false;"><SPAN>分享</SPAN></A>
+				<A class=a4 href="javascript:void(0)" onClick="sitefav(window.location.href,'[vodinfo:name]在线看');return false;" target=_blank>收藏</A>
+				<A class=a5 class="jiathis_button_qzone" target=_blank href="http://www.baidu.com/s?sr=0A45FF78D5225967C3EF34BC3B5242054A47A812&tn=35034034_cb&bar=0&word=[vodinfo:name] 下载">下载</A>
+			</div>
+			
+			<div class=r>
+				<div id="ckepop" class=turn >
+					<div class=tn>转发至：</div>
+					<div class=icon>
+						<a class="jiathis_button_tsina"></a>
+						<a class="jiathis_button_tqq"></a>
+						<a class="jiathis_button_renren"></a>
+						<a class="jiathis_button_kaixin001"></a>
+						<a class="jiathis_button_mixx"></a>
+						<a class="jiathis_button_189cn"></a>
+						<a href="http://www.jiathis.com/share" class="jiathis jiathis_txt jtico jtico_jiathis" target="_blank"></a>
+					    <a class="jiathis_counter_style"></a>
+					</div>
+					<script type="text/javascript" src="http://v2.jiathis.com/code/jia.js" charset="utf-8"></script>
+					<div class=sd></div>
+				</div>
+			</div>
+		</div>
+		  {maccms:playlist}
+			<div class="blank10B"></div>
+			<div class="block_ku clear">
+			<div class="soybox ">
+			<h2><span>播放列表[playlist:num]：（[playlist:show]）</span>【[playlist:tip]】</h2>
+			</div>
+			<div class="soyurl">
+			<ul>
+				{maccms:urllist order=asc}
+				<li><a href="[urllist:link]" target="_blank">[urllist:name]</a></li>
+				{/maccms:urllist}
+			</ul>
+			</div>
+			</div>
+			{/maccms:playlist}
+
+		<div id=shareIn class="shareIn clear">
+			<div class=close></div>
+		</div>
+		
+		<div class="vIntro clear">简介：
+			<P>[vodinfo:contenttext len=232]</P><BR>
+			<div class=vTag></div>
+		</div>
+		
+		<div class=line></div>
+		<div class="vInfo clear">
+			<div class="wdA l">发布时间：[vodinfo:time style=y-m-d h:ii:s]</div>
+			<div class="wdB l">播放：([vodinfo:hits])次</div>
+			<div class="wdC l">来源：[vodinfo:from]</div>
+			<div class="wdD l"></div>
+			<div class="wdE l">主演：[vodinfo:starring len=6]</div>
+		</div>
+	</div>
+
+	<div class="reMark bord clear">
+		<div class="conts clear">
+			<div id=commentlist class="comList clear">[vodinfo:comment]</div>
+		</div>
+	</div>
+</div>
+
+<div class=right>
+	<div class="hotLook bord clear">
+		<div class=titleFun>
+			<div class=tag></div>
+			<div class=tInfo><STRONG>热门排行</STRONG></div>
+			<div class=more></div>
+		</div>
+		<div class="conts clear">
+			<div class=pp>
+				<UL>{maccms:vodlist num=6 order=desc by=hitss}
+				<LI><A href="[vodlist:link]" target=_blank><IMG alt="" src="[vodlist:pic]" width=80 height=60></A><SPAN><A href="[vodlist:link]" target=_blank>[vodlist:name len=6]</A></SPAN> </LI>
+				{/maccms:vodlist}
+				</UL>
+			</div>
+		</div>
+	</div>
+	
+	<div class=ad300>
+	<script src="{maccms:templatepath}ads/300x250-1.js"></script>
+	</div>
+	<div class=ad300>
+	<script src="{maccms:templatepath}ads/300x250-2.js"></script>
+	</div>
+	
+	<div class="commend bord clear">
+		<div class=titleFun>
+			<div class=tag></div>
+			<div class=tInfo><STRONG>影视剧推荐</STRONG></div>
+			<div class=more></div>
+		</div>
+		<div class="conts clear">
+			<div class=pp>
+				<UL>{maccms:vodlist num=6 order=desc by=level}
+				<LI><A href="[vodlist:link]" target=_blank><IMG alt="" src="[vodlist:pic]" width=80 height=60></A><SPAN><A href="[vodlist:link]" target=_blank>[vodlist:name len=6]</A></SPAN> </LI>
+				{/maccms:vodlist}
+				</UL>
+			</div>
+		</div>
+	</div>
+	
+</div>
+</div>
+{maccms:foot}
+</body>
+</html>

@@ -1,0 +1,52 @@
+<!DOCTYPE HTML publiC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3c.org/TR/1999/REC-html401-19991224/loose.dtd">
+<HTML xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<TITLE>专题列表 - {maccms:name}</TITLE>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="keywords" content="专题列表,{maccms:name}" />
+<meta name="description" content="专题列表,{maccms:name}" />
+<link type="text/css" rel="stylesheet" href="{maccms:templatepath}images/kuniao.css">
+<link type="text/css"rel="stylesheet" href="{maccms:templatepath}images/public.css">
+<script>var maccms_path = "{maccms:path}"</script>
+<script src="{maccms:path}js/jquery.js"></script>
+<script src="{maccms:path}js/jquery.autocomplete.js"></script>
+<script src="{maccms:path}js/function.js"></script>
+<script src="{maccms:templatepath}images/js/kuniao.js"></script>
+</head>
+<body>
+{maccms:head}
+<div class="area kuS_nav">
+	<div id="kuS_nav">
+		<ul class="l">
+		<li class="color1"><a href="#">专题首页</a>&gt;&gt;</li>
+		<li><a href="{maccms:vodtopiclink}">视频专题</a> |</li>
+		<li><a href="{maccms:arttopiclink}">文章专题</a> |</li>
+		</ul>
+		<p class="pr r"></p>
+	</div>
+</div>
+<div class="blank12H"></div>
+<div id="ku_contentA" class="area pub">
+	<div class="kuniao_blockA kuniao_bordA">
+		<div class="kuniao_pp kuniao_pp2">
+			<ul>{maccms:topicpagelist num=20 table=vod id=all}
+			<li><a href="[pagelist:link]" target="_blank"><img width="212" height="120" alt="[pagelist:name]" src="[pagelist:pic]"></a>
+			<strong sizset="396" sizcache="1">
+			<a href="[pagelist:link]" target="_blank">[pagelist:name len=16]</a> 
+			</strong> 
+			<p>数量：<em>[pagelist:count]</em></p>
+			<p>播主：<a href="[pagelist:link]" class="color1" target="_blank">天堂</a></p>
+			</li>
+			{/maccms:topicpagelist}
+			</ul>
+		</div>
+		<div class="more">
+			<table><tbody><tr><td nowrap="">共{maccms:pagedata}条数据&nbsp;<a href="{maccms:pagefirst}">首页</a>&nbsp;<a href="{maccms:pagepre}">上一页</a>&nbsp; {maccms:pagenum len=8} &nbsp;<a href="{maccms:pagenext}">下一页</a>&nbsp; <a href="{maccms:pagelast}">尾页</a>&nbsp; 
+			<span id="pagingIndex"><span><b>{maccms:pagenow}/{maccms:pagecount}</b></span></span>&nbsp;{maccms:pageselect}
+			</td></tr></tbody></table>
+		</div>
+	</div>
+</div>
+{maccms:foot}
+</body>
+</html>

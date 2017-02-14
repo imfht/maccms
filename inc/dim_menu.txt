@@ -1,0 +1,2 @@
+网站设置,admin_config.php?action=config
+数据添加,admin_vod.php?action=add

@@ -1,0 +1,112 @@
+
+.snList .sn,.menuA .now em,.list20 li,.pg .arrow a span,#contentA .ku_block .boxB{background:url(ico2.png) no-repeat;}
+
+.pt{color:#666;line-height:20px;text-align:left;}
+.pt div{float:left;margin:0 10px 0 0;}			
+.pt p{clear:none}
+.pp li{float:left;display:inline;width:100%}
+.pt div img,.pp img,.pic img{border:1px #c5c5c5 solid;padding:1px}
+.pt div a:hover img,.pp a:hover img,.pic a:hover img{border:1px #dd0d0b solid}
+
+.kuniao .left{width:710px}
+.kuniao .right{width:250px}
+.kuniao .left .pp{padding-left:18px;width:680px;margin:0 auto}/*高清电视图片框*/
+.kuniao .left .pp li{position:relative;width:105px;height:218px;margin-right:27px;}
+.kuniao .left .pp span{width:105px;margin:3px auto 0;display:block;line-height:18px;text-align:left}
+.kuniao .left .pp span strong{display:block;font-weight:normal;margin:0 auto 2px;color:#666;}
+.kuniao .left .pp .end{margin:0}
+.kuniao .left .bpp li{height:216px}
+.kuniao .left .pp .label{position:absolute;top:129px;left:2px;height:15px;width:103px;margin:0 auto;color:#FFF;line-height:14px;text-align:right;padding:3px 2px 0 0}
+.kuniao .left .pp .label i{position:absolute;height:18px;width:105px;left:0;top:0;background:#000;filter:alpha(opacity=60);opacity: 0.60;}
+.kuniao .left .pp .label code{background:url(q_c.gif) no-repeat;z-index:20;display:block;width:27px;height:16px;position:absolute;top:1px;left:1px;}
+.kuniao .left .pp .label code.ch{background:url(q_g.gif) no-repeat;}
+.kuniao .left .pp .label em{position:relative;z-index:2;color:#FFF}
+.kuniao .left .pp .bp{top:129px}
+.kuniao .left .line{width:95%}
+
+.kuniao .bordA{border:1px #c5c5c5 solid;width:718px;background:#fff;}
+.kuniao .bordB{border:1px #c5c5c5 solid;background:#fff;}
+.kuniao .title{height:40px;width:694px;margin:0 2px;padding:15px 0 0;line-height:24px;color:#c9c9c9;text-align:left;}
+.kuniao .title span{float:left;margin-left:16px;display:inline}
+.kuniao .title a{margin:0 12px}
+.kuniao .title span a{margin:0}
+
+.links_blockLK .links_title{height:30px}
+.links_blockLK .txt{width:938px;margin:0 auto 18px;text-align:left;line-height:24px}
+.links{border:1px #c5c5c5 solid;width:978px;background:#fff;}
+.links_title{height:40px;width:976px;margin:0 2px;padding:15px 0 0;line-height:24px;color:#c9c9c9;text-align:left;}
+.links_title span{float:left;margin-left:16px;display:inline}
+.links_title a{margin:0 12px}
+.links_title span a{margin:0}
+
+.kuniao .right h2{height:23px;margin:0 2px;padding:12px 11px 3px;line-height:16px}
+.kuniao .right h2 a{color:#dd0d0b;}
+.kuniao .right .tvCls h2,.kuniao .right .dmCls h2,.kuniao .right .docCls h2{background:none;}
+.kuniao .right .line{width:92%}
+
+
+.snList{width:244px;margin:2px 1px 0 auto;height:146px}
+
+.snC2 ul{width:122px;float:left}
+.snList li{padding:6px 0;text-align:left;line-height:15px}
+.newsBox .snList li{width:234px;}
+.snList .sn{float:left;width:14px;margin-right:5px;_margin-right:2px;background-position:-25px -84px;text-align:center;font:600 11px/14px "Arial";color:#FFF}
+.snList .snr{background-position:-25px -57px}
+.snList .sc{width:108px;float:right}
+.snList .sc em{color:#F60;margin-right:4px}
+
+.list{width:240px;margin:0 auto 8px 12px;text-align:left;line-height:22px}
+.list li{width:48px;float:left}
+.c4 li{width:60px}
+.c3 li{width:80px}
+
+#contentA .ku_block{width:718px;border:1px #c5c5c5 solid}
+#contentA .ku_block .cont{width:712px; height:275px; border:3px #f6f6f6 solid;background:#FFF}
+#contentA .ku_block .l{width:361px;margin-left:15px}
+#contentA .ku_block .r{width:292px}
+#contentA .ku_block .time{height:32px;margin:7px auto;text-align:left;line-height:32px;}
+#contentA .ku_block .time img{vertical-align:middle;}
+#contentA .ku_block .boxA{width:350px;margin:10px auto;*margin:8px auto;text-align:left;line-height:22px}
+#contentA .ku_block .boxA p span a{color:#666}
+#contentA .ku_block .boxB{height:27px;width:320px;padding:6px 10px 0 30px;margin:0 auto 7px;background-color:#F2F2F2;background-position:8px -114px;text-align:right;line-height:22px}
+#contentA .dst{color:#333;}
+#contentA .ku_block .boxB strong{float:left;margin-right:12px;color:#333}
+#contentA .ku_block .boxB span{float:left}
+#contentA .ku_block .boxB img{float:left;margin:6px 0 0 8px}
+#contentA .ku_block .hisHot{height:32px;margin:13px 17px 0 0;text-align:right;}
+#contentA .ku_block .hisHot a{color:#dd0d0b;}
+#contentA .ku_block .hisHot em{float:right;margin-right:16px;display:inline}
+#contentA .ku_block .hisHot em a{display:block;width:56px;height:16px;padding-top:2px;background:#F2F7FB;border:1px #B0D5F1 solid;line-height:16px}
+#contentA .ku_block .pp{width:290px}
+#contentA .ku_block .pp li{width:124px;margin-right:27px;height:113px;}
+#contentA .ku_block .pp .end{margin:0}
+#contentA .ku_block .pp span{width:120px}
+#contentA .ku_block .pp .label{width:115px;top:74px}
+#contentA .ku_block .pp .label i{width:120px}
+
+/*login area  ///////////////*/
+#contentA .loginBox .logined .p a,#contentA .loginBox .logined .p a:hover {background:url(login.png) no-repeat 0 -2px;}
+#contentA .loginBox{color:#5a5a5a;border:1px solid #c5c5c5;height:281px;background:#fff;overflow:hidden;}
+#contentA .loginBox .login_title{float:left;font-weight: bold;font:600 14px/16px "Arial";color:#333;}
+#contentA .loginBox .hz{float:left;background:#ffffff;padding:5px 0 0 11px;line-height:22px;height:70px;}
+/*login area end*/
+
+
+#contentB .left .pp li{height:218px}/*高清电视剧图片高度*/
+#contentB .left .bpp li{height:213px}
+#contentB .blockLC .pp li{padding-bottom:7px;}
+#contentB .blockLC .listC5 h3{height:22px;padding:9px 19px 0;text-align:left;font:600 12px/22px ;color:#333}
+#contentB .blockLC .listC5 ul{width:684px;margin:5px 0 0 auto;height:55px;}
+#contentB .blockLC .listC5 li{width:114px;float:left;line-height:22px;text-align:left;}
+
+#contentB .blockLF .pp li{height:218px;}/*高清动漫图片框*/
+
+#contentB .newsBox .snList{height:auto;}
+#contentB .blockRA .pt{width:234px;margin:0 auto 12px;line-height:18px}
+#contentB .blockRA .pt div{_margin-right:7px}
+#contentB .blockRA .pt p{padding-top:5px}
+#contentB .blockRA .txt{margin:0 auto 14px}
+#contentB .blockRA .txt dl{clear:both;width:234px;margin:0 auto 4px}
+#contentB .blockRA .txt dt{float:left;width:32px;border:1px #CDDFEC solid;padding-top:2px;line-height:14px;color:#333}
+#contentB .blockRA .txt dd{width:192px;float:right;line-height:20px;text-align:left}
+

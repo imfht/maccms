@@ -1,0 +1,194 @@
+<!DOCTYPE HTML PUBliC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3c.org/TR/1999/REC-html401-19991224/loose.dtd">
+<HTML xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>[vodinfo:name]剧情介绍_[vodinfo:typename] - {maccms:name}</title>
+<meta name="keywords" content="[vodinfo:name]剧情介绍,[vodinfo:typename],{maccms:name}">
+<meta name="description" content="[vodinfo:name]剧情介绍,[vodinfo:typename],{maccms:name}">
+<link type="text/css" rel="stylesheet" href="{maccms:templatepath}images/kuniao.css">
+<link type="text/css" rel="stylesheet" href="{maccms:templatepath}images/vod.css">
+<script>var maccms_path = "{maccms:path}"</script>
+<script src="{maccms:path}js/jquery.js"></script>
+<script src="{maccms:path}js/jquery.autocomplete.js"></script>
+<script src="{maccms:path}js/function.js"></script>
+<script src="{maccms:path}js/player.js"></script>
+<script src="{maccms:templatepath}images/js/kuniao.js"></script>
+[vodinfo:history]
+</head>
+<body>
+{maccms:head}
+<div class="area" id="ku_A">
+<div class="left">
+<div class="block_ku clear">
+<div id="infoId">
+<div class="title">
+<div class="l"><strong>[vodinfo:name][vodinfo:remarks]</strong></div>
+<div class="r"><span>[vodinfo:scorepjf]</span>分([vodinfo:scorecount]人评分)</div>
+</div>
+<div class="info clear">
+<div class="l"><a href="[vodinfo:link]" target="_blank"><img
+	src="[vodinfo:pic]" width="120" height="165" alt=""></a></div>
+<div class="r">
+<dl>
+	<dt>地区：[vodinfo:area]</dt>
+	<dd>类型：<em>[vodinfo:typename]</em></dd>
+</dl>
+<dl>
+	<dt>来源：[vodinfo:from]</dt>
+	<dt>播放：<em>[vodinfo:hits]次</em></dt>
+</dl>
+<dl>
+	<dd>主演：[vodinfo:starringlink]</dd>
+</dl>
+<dl>
+	<dt>导演：[vodinfo:directed]</dt>
+	<dd>语言：[vodinfo:language]</dd>
+</dl>
+<dl>
+	<dd>[vodinfo:scoremark]</dd>
+</dl>
+<dl>
+	<dd>[vodinfo:goodmark] [vodinfo:badmark]</dd>
+</dl>
+<h5><a name="pageHot"></a><a
+	href="http://www.baidu.com/s?word=[vodinfo:name] 迅雷下载&tn=35034034_1_hao_pg&ie=gbk"
+	target="_blank" class="playBtn"> 下 载</a><em id="clipHref" style=""><a
+	href="http://www.baidu.com/s?word=[vodinfo:name] 快车下载&tn=35034034_1_hao_pg&ie=gbk"
+	target="_blank" class="playBtn">快车下载</a></em><em id="piczt" style=""><a
+	href="http://www.baidu.com/s?word=[vodinfo:name] BT下载&tn=35034034_1_hao_pg&ie=gbk"
+	target="_blank" class="playBtn">BT下载</a></em><em id="piczt" style=""><a
+	href="javascript:void(0)"
+	onClick="vodError('[vodinfo:id]','[vodinfo:name]');return false;"
+	class="playBtn">我要报错</a></em></h5>
+</div>
+</div>
+</div>
+</div>
+
+{maccms:playlist}
+<div class="blank10B"></div>
+<div class="block_ku clear">
+<div class="soybox ">
+<h2><span>播放列表[playlist:num]：（[playlist:show]）</span>【[playlist:tip]】</h2>
+</div>
+<div class="soyurl">
+<ul>
+	{maccms:urllist order=asc}
+	<li><a href="[urllist:link]" target="_blank">[urllist:name]</a></li>
+	{/maccms:urllist}
+</ul>
+</div>
+</div>
+{/maccms:playlist}
+{maccms:downlist}
+<div class="blank10B"></div>
+<div class="block_ku clear">
+<div class="soybox ">
+<h2><span>下载列表[downlist:num]：（[downlist:show]）</span>【[downlist:tip]】</h2>
+<div class="soyurl">
+<ul>
+	{maccms:urllist order=asc}
+	<li><a href="[urllist:link]" target="_blank">[urllist:name]</a></li>
+	{/maccms:urllist}
+</ul>
+</div>
+</div>
+</div>
+{/maccms:downlist}
+
+<div class="blank10B"></div>
+<div class="block_ku clear">
+<div class="soybox ">
+<h2><span> 剧情介绍:</span>请慢慢解读《[vodinfo:name]》这部好戏</h2>
+<a name="intro"></a>
+<div class="soytxt">
+<p>[vodinfo:content]</p>
+</div>
+</div>
+<div class="blank10B"></div>
+</div>
+[vodinfo:comment]</div>
+
+<div class="right">
+<div class="ad300"><script
+	src="{maccms:templatepath}ads/250x250-1.js"></script></div>
+<div class="blockRA clear">
+<h2><span class="t10">这些[vodinfo:typename]您或许喜欢看</span></h2>
+<div class="pp" id="likeLook">
+<ul>
+	{maccms:vodlist num=6 by=rnd order=desc}
+	<li><a href="[vodlist:link]" target="_blank"><img
+		src="[vodlist:pic]" width="90" height="109" alt="[vodlist:name]"></a><span><strong><a
+		href="[vodlist:link]" target="_blank" title="[vodlist:name]">[vodlist:name
+	len=7]</a></strong></span></li>
+	{/maccms:vodlist}
+</ul>
+</div>
+</div>
+
+<div class="blockRB clear">
+<h2><span>{maccms:name}：分类检索</span></h2>
+<div class="ku_menuA">
+<ul>
+	<li><A id=Tab_rebo_0 class=on
+		onMouseOver="switchTab('rebo',0,5,'on','');" href="javascript://">按产地</A>
+	</li>
+	<li><A id=Tab_rebo_1 onMouseOver="switchTab('rebo',1,5,'on','');"
+		href="javascript://">按类型</A></li>
+	<li><A id=Tab_rebo_2 onMouseOver="switchTab('rebo',2,5,'on','');"
+		href="javascript://">按年份</A></li>
+	<li><A id=Tab_rebo_3 onMouseOver="switchTab('rebo',3,5,'on','');"
+		href="javascript://">按拼音</A></li>
+	<li><A id=Tab_rebo_4 onMouseOver="switchTab('rebo',4,5,'on','');"
+		href="javascript://">按明星</A></li>
+</ul>
+</div>
+<div class="mvCls clear" id=List_rebo_0>
+<div class="list clear">
+<ul>
+	{maccms:arealist order=asc}
+	<li><a href="[arealist:link]">[arealist:name]</a></li>
+	{/maccms:arealist}
+</ul>
+</div>
+</div>
+<div class="tvCls clear" id=List_rebo_1>
+<div class="list clear">
+<ul>
+	{maccms:menulist parent=1,2,3 order=asc}
+	<li><a title='[menulist:name]' href="[menulist:link]">[menulist:name]</a></li>
+	{/maccms:menulist}
+</ul>
+</div>
+</div>
+<div class="dmCls clear" id=List_rebo_2>
+<div class="list clear">
+<ul>
+	{maccms:yearlist start=2000 end=2013 order=desc}
+	<li><a href="[yearlist:link]">[yearlist:name]</a></li>
+	{/maccms:yearlist}
+</ul>
+</div>
+</div>
+<div class="dmCls clear" id=List_rebo_3>
+<div class="list clear">
+<ul>
+	{maccms:typematrix type=letter letter=all}
+	<li><a href="[typematrix:link]">[typematrix:name]</a></li>
+	{/maccms:typematrix}
+</ul>
+</div>
+</div>
+<div class="dmCls clear" id=List_rebo_4>
+<div class="list clear">
+<ul>
+	{label:starring.html}
+</ul>
+</div>
+</div>
+</div>
+</div>
+</div>
+{maccms:foot}
+</body>
+</html>

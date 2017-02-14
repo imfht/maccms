@@ -1,0 +1,2 @@
+MacPlayer.playhtml = '<embed type="application/x-shockwave-flash" src="'+MacPlayer.playurl+'" id="Player" bgcolor="#FFFFFF" quality="high" allowfullscreen="true" allowNetworking="internal" allowscriptaccess="never" wmode="transparent" menu="false" always="false"  pluginspage="http://www.macromedia.com/go/getflashplayer" width="100%" height="'+MacPlayer.height+'" flashvars="&SCALE=exactfit">';
+MacPlayer.show();

@@ -1,0 +1,132 @@
+<!DOCTYPE HTML PUBliC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3c.org/TR/1999/REC-html401-19991224/loose.dtd">
+<HTML xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<TITLE>{topicpage:name} 第{topicpage:page}页_{maccms:name}</TITLE>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta name="keywords" content="{topicpage:name},{topicpage:key}">
+<meta name="description" content="{topicpage:name},{topicpage:des}">
+<link type="text/css" rel="stylesheet" href="{maccms:templatepath}images/kuniao.css">
+<link type="text/css" rel="stylesheet" href="{maccms:templatepath}images/vod.css">
+<script>var maccms_path = "{maccms:path}";</script>
+<script src="{maccms:path}js/jquery.js"></script>
+<script src="{maccms:path}js/jquery.autocomplete.js"></script>
+<script src="{maccms:path}js/function.js"></script>
+<script src="{maccms:templatepath}images/js/fenlei.js"></script>
+</head>
+<body>
+{maccms:head}
+<div id="contentA" class="area">
+	<div class="left">
+		<div class="indexMenu bord clear">
+			<ul>
+			<li class="now">{maccms:name}高清电影&gt;&gt;</li>
+			{maccms:menulist type=child order=asc}
+			<li><a title='[menulist:name]' href="[menulist:link]" class="more">[menulist:name]</a></li>
+			{/maccms:menulist}
+			<li class="now"><a href="{maccms:artindexlink}">{maccms:name}文章阅读</a>&gt;&gt;</li>
+			{maccms:menulist table=art}
+			<li><a href="[menulist:link]">[menulist:name]</A></li>
+			{/maccms:menulist}
+			</ul>
+		</div>
+	</div>
+	<div class="right">
+		<div class="seleRe bord clear">
+			<div class="l">{topicpage:name}</div>
+			<div class="c">
+				<div class="cc ll">共有 <span>{maccms:pagedata}</span>部影片&nbsp;&nbsp;&nbsp;&nbsp; <font color="#ff0000">天天看电影</font>&nbsp;&nbsp;&nbsp;&nbsp;<font color="#0000ff">天天有惊喜</font>&nbsp;&nbsp;&nbsp;&nbsp; <font color="#ff0000">欢迎使用苹果CMS(maccms)电影程序</font></div>
+			</div>
+			<div class="r"> </div>
+		</div>
+		<div class="seaKey bord clear" id="seaKey">
+			<ul>
+			<li><span>产地：</span></li>
+			<li class="now"><a href="/" title="">全部</a></li>
+			<li><a href="{maccms:searchlink}?area=大陆">大陆</a></li>
+			<li><a href="{maccms:searchlink}?area=香港">香港</a></li>
+			<li><a href="{maccms:searchlink}?area=台湾">台湾</a></li>
+			<li><a href="{maccms:searchlink}?area=日本">日本</a></li>
+			<li><a href="{maccms:searchlink}?area=韩国">韩国</a></li>
+			<li><a href="{maccms:searchlink}?area=美国">美国</a></li>
+			<li><a href="{maccms:searchlink}?area=其他">其他</a></li>
+			</ul>
+			<ul>
+			<li><span>年份：</span></li>
+			<li class="now"><a href="/">全部</a></li>
+			<li><a href="{maccms:searchlink}?year=2011">2011年</a></li>
+			<li><a href="{maccms:searchlink}?year=2010">2010年</a></li>
+			<li><a href="{maccms:searchlink}?year=2009">2009年</a></li>
+			<li><a href="{maccms:searchlink}?year=2008">2008年</a></li>
+			<li><a href="{maccms:searchlink}?year=2007">2007年</a></li>
+			<li><a href="{maccms:searchlink}?year=2006">2006年</a></li>
+			<li><a href="{maccms:searchlink}?year=2005">2005年</a></li>
+			<li><a href="{maccms:searchlink}?year=2004">2004年</a></li>
+			<li><a href="{maccms:searchlink}?year=2003">2003年</a></li>
+			<li><a href="{maccms:searchlink}?year=2002">2002年</a></li>
+			<li><a href="{maccms:searchlink}?year=2001">2001年</a></li>
+			<li><a href="{maccms:searchlink}?year=2000">2000年</a></li>
+			<li><a href="{maccms:searchlink}?year=1999">1999年</a></li>
+			</ul>
+			<ul>
+			<li><span>明星：</span></li>
+			<li class="now"><a href="/">全部</a></li>
+			<li><a href="{maccms:searchlink}?starring=成龙">成　龙</a></li>
+			<li><a href="{maccms:searchlink}?starring=李连杰">李连杰</a></li>
+			<li><a href="{maccms:searchlink}?starring=洪金宝">洪金宝</a></li>
+			<li><a href="{maccms:searchlink}?starring=甄子丹">甄子丹</a></li>
+			<li><a href="{maccms:searchlink}?starring=元彪">元　彪</a></li>
+			<li><a href="{maccms:searchlink}?starring=元华">元　华</a></li>
+			<li><a href="{maccms:searchlink}?starring=贾静雯">贾静雯</a></li>
+			<li><a href="{maccms:searchlink}?starring=章子怡">章子怡</a></li>
+			<li><a href="{maccms:searchlink}?starring=范冰冰">范冰冰</a></li>
+			<li><a href="{maccms:searchlink}?starring=周星驰">周星驰</a></li>
+			<li><a href="{maccms:searchlink}?starring=刘德华">刘德华</a></li>
+			<li><a href="{maccms:searchlink}?starring=陈道明">陈道明</a></li>
+			<li><a href="{maccms:searchlink}?starring=李丽珍">李丽珍</a></li>
+			</ul>
+		</div>
+		
+		<div class="shLay" id="shid"></div>
+		<div class="menuC">
+			<div class="l">
+				<ul>
+				<li class="libg">&gt;&gt;{topicpage:name}</li>
+				</ul>
+			</div>
+		</div>
+		<div class="jsonPP clear" id="videoData">
+			<div class="vData clear">
+			{maccms:vodpagelist num=20 type=current by=time order=desc}
+			<div class="vInfo">
+			<div class="vPic">
+			<a href="[pagelist:link]" target="_blank">
+			<img src="[pagelist:pic]" width="121" height="158" alt="">
+			</a>
+			<div class="label"><i></i><em>人气:[pagelist:hits]</em></div>
+			<span class="cq_ico"></span>
+			<div style="display:none;" class="popInfo">
+			<div class="popBG"></div>
+			<div class="popLay">
+			<h4><a href="[pagelist:link]" target="_blank">[pagelist:name len=10]</a></h4>
+			<p>主演：<strong>[pagelist:starring len=10]</strong></p>
+			<p>[pagelist:contenttext len=100] ...<a href="[pagelist:playlink]" target="_blank">[观看]</a></p>
+			</div></div></div>
+			<div class="vTxt">
+			<h4><a href="[pagelist:link]" target="_blank">[pagelist:name len=8]</a></h4>
+			<p>主演：[pagelist:starring len=6]</p>
+			</div></div> 
+			{/maccms:vodpagelist}
+			</div>
+		</div>
+		<div class="jumpB clear">
+			<a class="pa" style="padding-left:5px" href="{maccms:pagefirst}">首页</a>
+			<a href="{maccms:pagepre}">上一页</a>{maccms:pagenum len=8}<a href="{maccms:pagenext}">下一页</a>
+			<a class="pa" style="padding-left:5px" href="{maccms:pagelast}">尾页</a>
+			{maccms:pagenow}/{maccms:pagecount}页 {maccms:pagesize}条/每页
+			{maccms:pageselect}
+		</div>
+	</div>
+</div>
+{maccms:foot}
+</body>
+</html>

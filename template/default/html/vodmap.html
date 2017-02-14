@@ -1,0 +1,32 @@
+<!DOCTYPE HTML PUBliC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3c.org/TR/1999/REC-html401-19991224/loose.dtd">
+<HTML xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<TITLE>网站地图 - {maccms:name}</TITLE>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="keywords" content="网站地图,{maccms:name}" />
+<meta name="description" content="网站地图,{maccms:name}" />
+<link type="text/css" rel="stylesheet" href="{maccms:templatepath}images/kuniao.css">
+<script>var maccms_path = "{maccms:path}"</script>
+<script src="{maccms:path}js/jquery.js"></script>
+<script src="{maccms:path}js/jquery.autocomplete.js"></script>
+<script src="{maccms:path}js/function.js"></script>
+<script src="{maccms:path}js/player.js"></script>
+<script src="{maccms:templatepath}images/js/kuniao.js"></script>
+</head>
+<body>
+{maccms:head}
+<div class="area">
+	{maccms:typematrix type=all}
+	<div class="newlist" style="clear:both;width:978px;height:auto;">
+	<h2><div class="z">[typematrix:name]&gt;&gt;共&nbsp;<font color=red>([typematrix:count])</font>&nbsp;条记录</div><a class="y" href="[typematrix:link]" target="_blank">查看更多...</a></h2>
+		<ul class="index-text">{maccms:vodlist num=98 by=time order=desc type=[typematrix:id]}
+		<li><a href="[vodlist:link]" title="[vodlist:name]" target=_blank>[vodlist:name len=9]</a></li>
+		{/maccms:vodlist}
+		</ul>
+	</div>
+	{/maccms:typematrix}
+</div>
+{maccms:foot}
+</div>
+</body>
+</html>

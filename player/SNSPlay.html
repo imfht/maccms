@@ -1,0 +1,218 @@
+﻿
+ <body topmargin="0" leftmargin="0">
+   <!-- 调用SNSCLOUD的jQuery  -->
+<script type="text/javascript" src="http://libs.litscloud.com/js/snscloud/jquery-1.7.2.min.js"></script>
+<script type="text/javascript" src="http://libs.litscloud.com/js/snscloud/activeUtil.js"></script>
+
+<script>
+    //为了保险起见，当CDN服务器获取不到js时，则使用自己的
+    window.jQuery || document.write('<script src="/{maxcms:sitepath}js/snscloud/jquery-1.7.2.min.js"><\/script>');
+    window.jQuery || document.write('<script src="/{maxcms:sitepath}js/snscloud/activeUtil.js"><\/script>');
+    //or !window.jQuery && document.write(''<script src=/jQuery/jquery-1.9.0.min.js><\/script>'');
+</script> 
+<script>
+
+var reqHost = "http://localhost"
+var reqUri = "/sns"
+var listenPort0 = 9700;
+var listenPort1 = 9702;
+var isRunSNSCloud = false;
+
+var snsinstall="http://libs.litscloud.com/static/install.html";  //为当用户没有安装播放器时所提示的下载安装页面,可修改为您的提示页面
+var snsloading="http://libs.litscloud.com/static/snsloading.html";
+var sns_adv = "http://libs.litscloud.com/pop/buffer/index.html";
+var sns_adv_time = 5;
+var bmad_text="体验即时云软件,免费送25万意外保险！";
+var bmad_link="http://act.rong24.com/ywx/landing.php?s=33";
+var sns_kind = 2;
+var embed = 0;    //0(默认值,内嵌浏览中播放)   大于0为终端播放器播放(此时将忽略showurl参数)
+var onlydown = 0; //0(默认值)  大于0为仅下载(此时将忽略showurl,embed参数)
+
+
+
+var tophref = top.location.href;
+			//alert(tophref);
+var showurl = encodeURI(tophref);
+var rootUrl = encodeURI(tophref);
+
+var totalNum = 3;
+writeLoadCss();
+writeCountDownCss();
+writeLoadDiv();
+writeCountDownDiv();
+
+
+document.writeln("<div id=\"snsplay\"><a id=\"snscloud\" href=\"snscloud:\/\/\" style=\"visibility: hidden;\"><\/a><\/div>");
+
+function doVideoPlay(snsurl){
+	if(navigator.userAgent =="SnsBrowser") return ;
+			
+	setTimeout(function(){
+		snsPlay(snsurl, width, height);
+	},3000)
+
+}
+        var snsurl = parent.MacPlayer.playurl;
+        var width = parent.MacPlayer.width;
+        var height = parent.MacPlayer.height;
+		var sns_next_url = parent.MacPlayer.nexturl;
+      var sns_next_url = "";
+	  var sns_live = 2;  //1=live 2=vod
+			var Snsplayer={
+				"sns_live":sns_live,//直播标志位
+				"url":snsurl, //播放的SNSURL
+				"nextUrl":sns_next_url,//下一集播放的SNSURL
+				"adUrl":sns_adv,//广告URL
+				"seconds":sns_adv_time,//广告播放时间
+				"bmad_text":bmad_text,//滚动广告文本
+				"bmad_link":bmad_link//滚动广告点击时响应URL
+			 };
+/**
+ *  @param snsurl snsurl地址(带snscloud://前缀)
+ *  @param showurl 视频显示页
+ *
+ */
+function snsPlay(snsurl,width, height){
+	var snsrequrl = reqHost+":"+listenPort0+reqUri;
+	var cmd = "snsplay" ;
+    var data = "callback=?&cmd="+cmd+"&kind="+sns_kind+"&snsurl="+snsurl+"&showurl="+encodeURI(top.location.href);
+	/* 如果是内嵌浏览器就没必要传rooturl(rooturl为请求来源页) */
+	data+="&ts="+new Date().getTime()+"&onlydown="+onlydown+"&embed="+embed;
+
+	//alert(url+"?"+data);
+	//reqUrl = "snscloud://hello";
+				$("#loader").show();
+				$.ajax({
+					type:"POST",
+					url:snsrequrl+"?"+data,
+					dataType:'jsonp',
+					data:'',
+					jsonp:'callback',
+					timeout:1000,
+					success:function(result) {////http隧道第一次请求即成功
+						$("#loader").hide();
+					},
+					error:function(){////http隧道第一次请求失败 尝试下一端口
+						//alert("尝试另外通道");
+						snsrequrl = reqHost+":"+listenPort1+reqUri;
+						$.ajax({
+							url:snsrequrl+"?"+data,
+							dataType:'jsonp',
+							data:'',
+							jsonp:'callback',
+							timeout:1000,
+							success:function(result) {
+								$("#loader").hide();
+							},
+							error:function(){
+								$("#loader").hide();
+								$("#downer").show();
+					
+					
+					//document.getElementById("snscloud").click();
+							//	window.onhaschange = snscloudRun();
+								
+									//判断浏览器 ff和chome有弹出框
+					if(it.b.isChrome() || it.b.isFirefox()){
+						//alert(1111);
+						//弹出提示层 并倒计时 有个问题360的触发才计时未实现
+						countDownInterval = setInterval(function(){
+							CountDown();
+						}, 3000);
+					}else{
+						if(isRunSNSCloud == false){
+                                 //   SNSInstall();
+									tipSNSInstall();
+								}else{
+									}
+						//不用弹出层
+					}
+								document.getElementById("snscloud").click();
+					//fillPlayArea('SNSplayArea',snscloud_ieloading,width,height);			
+
+
+				}
+
+						});////第二次请求代码结束
+					}
+				});////第一次请求代码结束	
+			}
+function snscloudRun(){
+	//alert(2);
+	isRunSNSCloud = true;
+}
+function snscloudRun11(){
+	//alert(55);
+	isRunSNSCloud = true;
+}
+
+function tipSNSInstall(){
+	alert("\u65e0\u6cd5\u68c0\u6d4b\u5230SNSCloud\u670d\u52a1\uff0c\u8bf7\u786e\u5b9a\u60a8\u662f\u5426\u5b89\u88c5SNS\u64ad\u653e\u5668?!\u5b89\u88c5\u540e\u8bf7\u624b\u52a8\u8fd0\u884cSNSCloud\u7a0b\u5e8f\uff0c\u6ca1\u6709\u5b89\u88c5\u8bf7\u5148\u4e0b\u8f7d\u64ad\u653e\u5668!");
+	//if(confirm("\u4f60\u73b0\u5728\u8981\u4e0b\u8f7dSNSCloud\u7ec8\u7aef\u5417?")){
+		document.write("<iframe marginWidth=0 id=wdqad name=wdqad marginHeight=0 src="+snsinstall+" frameBorder=0 width="+width+" scrolling=no height="+height+"></iframe>");
+		return;
+	//}
+}
+
+function loadMsg(){
+	
+}
+function removeLoadMsg(){
+	
+}
+
+function writeLoadDiv(){
+	document.write("<div id=loader_container>\n"); 
+	document.write("<div id=loader>\n"); 
+	document.write("<div align=center><iframe marginWidth=0 id=wdqad name=wdqad marginHeight=0 src="+snsloading+" frameBorder=0 width="+width+" scrolling=no height="+height+"></iframe></div>\n"); 
+	//fillPlayArea('SNSplayArea',snscloud_ieloading,width,height); 
+	document.write("</div></div>\n ");
+}
+
+function writeCountDownDiv(){
+	document.write("<div id=down_container>\n"); 
+	document.write("<div id=downer>\n"); 
+	document.write("<div align=center></div>\n"); 
+	document.write("</div></div>\n ");
+}
+
+function writeLoadCss(){
+	document.write("<style>"); 
+	document.write("#loader_container {text-align:center; position:absolute; top:0; width:"+(width-10)+";height:"+(height-10)+"; left: 0;}\n");
+	document.write("#loader {font-family:Tahoma, Helvetica, sans; font-size:11.5px; color:#000000; background-color:#FFFFFF; padding:10px 0 16px 0; margin:0 auto;display:none; width:"+width+";height:"+height+";border:1px solid #5a667b; text-align:left; z-index:9999;}\n"); 
+	document.write("#loader_bg {background-color:#e4e7eb; position:relative; top:8px; left:8px; height:7px; width:113px; font-size:1px;}\n"); 
+	document.write("</style>\n"); 
+}
+
+function writeCountDownCss(){
+	document.write("<style>");
+	document.write("#down_container {text-align:center; position:absolute; top:0;  width:"+(width-10)+";height:"+(height-10)+"; left: 0;}\n");
+	document.write("#downer {font-family:Tahoma, Helvetica, sans; font-size:11.5px; color:#000000; background-color:#FFFFFF; padding:10px 0 16px 0; margin:0 auto;display:none; width:"+width+";height:"+height+"; border:1px solid #5a667b; text-align:left; z-index:9999;}\n"); 
+	document.write("#down_bg {background-color:#e4e7eb; position:relative; top:8px; left:8px; height:7px;width:"+(width-10)+";height:"+(height-10)+"; font-size:1px;}\n"); 
+	
+	document.write("</style>\n");
+}
+
+
+function CountDown(){
+	//alert(totalNum);
+	$("#downer").html("<div align=center><iframe marginWidth=0 id=wdqad name=wdqad marginHeight=0 src="+snsloading+" frameBorder=0 width="+width+" scrolling=no height="+height+"></iframe></br>本层还剩"+(totalNum--)+"秒关闭</div>\n");
+
+	if(totalNum == -1){
+		$("#downer").hide();
+		//alert(isRunSNSCloud);
+		if(isRunSNSCloud == false){
+                                 //   SNSInstall();
+									tipSNSInstall();
+		}
+
+	}
+	
+
+}
+
+if(navigator.userAgent =="SnsBrowser"){ Snsplayer.url=url;}
+doVideoPlay();
+   </script>
+
+  </body>

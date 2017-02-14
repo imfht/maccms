@@ -1,0 +1,46 @@
+@charset "utf-8";
+/* 全局样式 */
+body { height:100%; margin:0; background: #F7FBFF; text-align:left;}
+body,td,th,p,div { color: #333333; line-height: 130%; font-family: "Verdana"; font-size: 12px;}
+dl,dt,dd,form,p{ margin:0; padding:0;}
+img,input,button,select{ vertical-align:middle; }
+img{ border:none; }
+div{margin:0 auto;padding:0}
+
+/* 连接样式 */
+a:link    { color: #0B55C4; text-decoration: none; }
+a:visited { color: #0B55C4; text-decoration: none; }
+a:hover   { text-decoration: underline; }
+
+.gbooks { margin-top:5px; padding:10px; padding-left:20px; border:1px solid #C6D9E7; background:#fff; }
+.gbooks .top { position:relative; }
+.gbooks .top a{ position:absolute; right:20px; }
+.gbooks .top a em{ font-style:normal; color:#F70000; }
+.gbooks .info { margin:5px 0; }
+.gbooks .info p{ margin:5px 0; }
+.gbooks .info label{ display:inline-block; }
+.gbooks .textarea { margin:5px 0; }
+.gbooks .textarea textarea { width:576px; height:50px; font-size:14px; padding:6px; text-align:left; }
+.gbooks .bottom button{ margin-right:6px; }
+
+.gbook_list{ margin-top:5px; padding:10px; border:1px solid #C6D9E7; background:#fff; }
+.gbook_list .dt{ }
+.gbook_list .author{ float:left; color:#0B3B8C; }
+.gbook_list .author img{ margin-right:3px; }
+.gbook_list .author .name, .gbook_list .author a{ color:#FFFFFF;padding:2px 5px; vertical-align:middle; }
+.gbook_list .address{ color:#8D8D8D; margin-left:10px; vertical-align:middle; }
+.gbook_list .post-time{ float:right; color:#8D8D8D; }
+.gbook_list .dd { padding:5px 0; margin-top:5px; margin-bottom:15px; border-bottom:1px dashed #C2C3BA; }
+.gbook_list .dd .citation { width:80%;  background:#FFFEF5; border:1px solid #D1D5DB; margin-left:10px; }
+.gbook_list .dd .citation-title { line-height:25px; padding-left:5px; padding-right:5px; }
+.gbook_list .dd .citation .content { color:red; padding-left:8px; }
+.gbook_list .dd .content { font-size:14px; word-wrap:break-word; overflow:hidden; margin-bottom:0; line-height:25px; }
+.gbook_list .dd .toolbar { text-align:right; }
+.gbook_list .dd .toolbar a { margin-left:8px; }
+
+/* 分页样式 */
+.pages { width:100%; margin-bottom:5px; display:table; clear:both; }
+.pages a, .pages span { display:block; float:left; background:#fff; border:solid 1px #DEDEDE; padding:1px 3px; margin-right:2px; text-align:center; text-decoration:none; -moz-border-radius:5px; -webkit-border-radius:5px; -khtml-border-radius:5px; border-radius:5px;}
+.pages a:hover{ position:relative; line-height:1; padding:0 5px; font-size:24px; z-index:100; margin:-8px 0 0 -8px; text-decoration:none;}
+.pages a:hover + a{ position:relative; line-height:1; padding:0 5px; font-size:18px; z-index:90; margin:-4px 0 0 -4px; text-decoration:none;}
+.pages span.active{ color:#990000 !important; font-weight:bold; }

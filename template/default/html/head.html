@@ -1,0 +1,59 @@
+<!--头部模板-->
+<div class=header_ku>
+<div class=wrap>
+<div class=htwl> </div>
+<div class=htwr>
+<a href="{maccms:gbooklink}" target=_blank>网友留言</a>|
+<a href="{maccms:path}baidu.xml" target=_blank>BaiduXML</a>|
+<a href="{maccms:path}rss.xml" target=_blank>RssXML</a>|
+<a href="{maccms:path}google.xml" target=_blank>GoogleXML</a>|
+ <SPAN><a href="javascript:void(0)" onClick="sitefav ('http://{maccms:url}','{maccms:name}');">加入收藏</a></SPAN>
+</div></div>
+</div>
+<div class="area" id="logoBar">
+<div class="logo l">
+<div class="tvLogo l"><a href="{maccms:path}"><img height="50" alt="{maccms:name}" src="{maccms:templatepath}images/logo.gif" width="105"></a></div>
+<div class="tvAd l"><a href="{maccms:path}" target="_blank"><img src="{maccms:templatepath}images/0105.jpg" border="0" height="50" width="110"></a></div>
+</div>
+<div class="search l" sizset="24" sizcache="1">
+<form id="formsearch" method="get" name="formsearch" action="{maccms:searchlink}" target="_blank" autocomplete="off">
+<input onblur="if(this.value==''){this.value='提醒您请输入您要搜索的关键字';this.style.color='#aaa'};var a = document.getElementById('keyword').value; document.getElementById('keyword').value = a;" id="keyword" class="tx" onfocus="if(this.value=='提醒您请输入您要搜索的关键字'){this.value='';this.style.color='#aaa'};" value=提醒您请输入您要搜索的关键字 name="keyword" ><input id="searchbtn" class="btn" value="搜索" type="submit">
+<div style="DISPLAY: none" id="newResult" class="new_result fix"></div>
+<iframe class="new_result" frameborder="0" scrolling="no"></iframe>
+<div id="newResult" class="new_result fix" style="display: none; "></div>
+<iframe class="new_result" frameborder="0" scrolling="no"></iframe></form>
+<p class="text" sizset="24" sizcache="1">
+{label:hotsearch.html}
+</p></div>
+<div class="infos r">
+<div id="gNavLoginBox" class="login"><span class="color1"><a href="{maccms:path}user/?action=login" target="_blank">登录</a> | <a  href="{maccms:path}user/?action=reg">注册</a> | <a href="#" target="_blank">帮助</a></span></div>
+<div class="lnk"><!--弹出层开始-->
+<a class="aUpload" href="/" target="_blank">等待添加</a> 
+<a class="aHistory" href="javascript:showDiv()">观看记录</a>
+</div>
+<div id="popDiv" class="mydiv" style="display:none;">
+	<div style="float:center;margin-top:15px;">
+	<a href="javascript:closeDiv()">关闭窗口</a>&nbsp;&nbsp;
+	<a href="javascript:void(0);" onclick="history_del();return false;">清除记录</a>
+	</div>
+	<P style="padding-left:2px;">
+		<ul style="text-align: left;padding-left:20px;"><script>history_Look(10);</script></ul>
+	</P>
+</div>
+</div>
+</div>
+<div class="blank12H"></div>
+<div class="header ">
+<div id=kuNiao>
+<ul class=ku_content>
+  <li {if:{maccms:appid}=10} class=current{end if}><A href="{maccms:path}"><SPAN>首页</SPAN></A></li>
+  {maccms:menulist table=vod type=parent by=id order=asc}
+  <li {if:{maccms:curvodtypeid}=[menulist:id]} class=current{end if}><a href="[menulist:link]"><SPAN>[menulist:name]</SPAN></A></li>
+  {/maccms:menulist}
+  <li style="position:relative;" {if:{maccms:appid}=20} class=current{end if}><A href="{maccms:artindexlink}" ><SPAN>阅  读</SPAN></a><em></em></li>
+  <li {if:{maccms:appid}=12} class=current{end if} {if:{maccms:appid}=22} class=current{end if}><a href="{maccms:vodtopiclink}" ><SPAN>专  题</SPAN></a></li>
+  <li {if:{maccms:appid}=11} class=current{end if}><a href="{maccms:vodmaplink}" ><SPAN>全  部</SPAN></a></li>
+</ul>
+<div class=ku_right></div>
+</div></div>
+<script src="{maccms:templatepath}ads/head.js"></script>

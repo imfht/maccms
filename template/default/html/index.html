@@ -1,0 +1,225 @@
+<!DOCTYPE HTML publiC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3c.org/TR/1999/REC-html401-19991224/loose.dtd">
+<HTML xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=EmulateIE7" />
+<title>{maccms:name}-首页</title>
+<meta name="keywords" content="{maccms:name},{maccms:keywords}" />
+<meta name="description" content="{maccms:name},{maccms:description}" />
+<link type="text/css" rel="stylesheet" href="{maccms:templatepath}images/kuniao.css">
+<link type="text/css" rel="stylesheet" href="{maccms:templatepath}images/index.css">
+<script>var maccms_path = "{maccms:path}";</script>
+<script src="{maccms:path}js/jquery.js"></script>
+<script src="{maccms:path}js/jquery.autocomplete.js"></script>
+<script src="{maccms:path}js/function.js"></script>
+<script src="{maccms:templatepath}images/js/kuniao.js"></script>
+</head>
+<body>
+{maccms:head}
+<div id="contentA" class="area kuniao">
+	<div class="left">
+		<div class="ku_block clear">
+			<div class="cont clear">
+				<div class="l">
+                    <div class="time">
+	                    <div class="boxB clear"><span>今日更新影片<font color=red>{maccms:voddaycount}</font>部 新闻<font color=red>{maccms:artdaycount}</font>篇 影片共 <font color=blue>{maccms:vodallcount}</font>部 新闻共<font color=blue>{maccms:artallcount}</font>篇</span> </div>
+                    </div>
+					<div class="line"></div>
+					<div class="boxA clear">
+					{if:{maccms:artallcount}=0}<p>没有任何文章信息</p>{else} {end if}
+					{maccms:artlist num=10 by=time order=desc}
+					<p><span class="color1">[[artlist:typename]]</span> <a href="[artlist:link]" target="_blank">[artlist:title len=22]...</a></p>
+					{/maccms:artlist}
+					</div>
+				</div>
+				
+				<div class="r">
+					<div class="hisHot"><span class="color1" id="dataId">当前日期</span>&nbsp;&nbsp;&nbsp;<span>精彩推荐专题↓　</span></div>
+					<script type="text/javascript">
+						var today = new Date();
+						var vYear = today.getFullYear();
+						var vMonth = today.getMonth()+1;
+						var vDay = today.getDate();
+						var vWeek = today.getDay();
+						var weekData = ["星期日", "星期一", "星期二", "星期三", "星期四", "星期五", "星期六"];					document.getElementById("dataId").innerHTML=vYear+"."+vMonth+"."+vDay+" "+weekData[vWeek];
+					</script>
+					<div class="pp">
+					<ul>{maccms:topiclist num=4 id=all table=vod}
+					<li class="end" style="padding-right:18px;"><a href="[topiclist:link]" target="_blank" ><img border="0" alt="[topiclist:name]" src="[topiclist:pic]" width="120" height="90"></a><span ><a title="" href="[topiclist:link]" target="_blank">[topiclist:des len=18]...</a><br></span><span class="label"><i></i><em>[topiclist:name len=8]</em></span></li>
+					{/maccms:topiclist}
+					</ul></div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div class="right">
+		<div id="gLoginBox" class="loginBox">
+			<div class="passportc">
+				<h2><span class="login_title">用户登录</span></h2>
+				<div class="text">
+					<iframe src="{maccms:userlink}" width="250" height="160" frameborder="no" border="0" marginwidth="0" marginheight="0"></iframe>
+					<div class="hz">
+						<p align=left>苹果电影程序MacCMS：</p> 
+						<p align=left>苹果MacCMS ASP+PHP v7.x</p>
+						<p align=left>下载程序：<a href="http://www.maccms.com/down.html" target="_blank">本地下载</a> ｜ <a href="http://bbs.maccms.com" target="_blank">苹果CMS论坛</a></p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<div class="blank12H"></div>
+
+<div id="contentB" class="area kuniao">
+<div class="left">
+	
+	<div class="ku_block bordA clear" id="tvPop">
+		<div class="title"><span><img alt="高清电视剧" src="{maccms:templatepath}images/tt02.gif" width="108" height="18"></span>{maccms:menulist parent=2 order=asc}<a title='[menulist:name]' href="[menulist:link]" target="_blank">[menulist:name]</a>|{/maccms:menulist}</div>
+		<div class="pp">
+			<ul>
+			{maccms:vodlist num=10 type=2 by=time order=desc}
+			<li><a href="[vodlist:link]" target="_blank"><img border="0" alt="[vodlist:name]" src="[vodlist:pic]" width="105" height="145"></a><span><strong ><a href="[vodlist:link]" target="_blank">[vodlist:name len=9]</a></strong>[vodlist:time style=y-m-d]</span><span class="label"><i></i><code class="cc"></code><em>{if:not isN("[vodlist:remarks]")}[vodlist:remarks]{elseif:[vodlist:state]=0}
+			[完结]{elseif:[vodlist:state]>0}[连载[vodlist:state]]{else}{end if}</em></span> 
+			</li>
+			{/maccms:vodlist}
+			</ul>
+		</div>
+	</div>
+	<div class="blank12H"></div>
+	<div class="blockLB bordA clear" id="mvPop">
+		<div class="title"><span><img alt="高清电影" src="{maccms:templatepath}images/tt03.gif" width="85" height="18"></span>{maccms:menulist  parent=1 order=asc}<a title='[menulist:name]' href="[menulist:link]" target="_blank">[menulist:name]</a>|{/maccms:menulist}</div>
+		<div class="pp bpp">
+			<ul>
+			{maccms:vodlist num=10 type=1 by=time order=desc}
+			<li><a href="[vodlist:link]" target="_blank"><img border="0" alt="[vodlist:name]" src="[vodlist:pic]" width="105" height="145"></a><span ><strong><a href="[vodlist:link]" target="_blank">[vodlist:name len=9]</a></strong>[vodlist:time style=y-m-d]</span><span class="label bp"><i></i><code class="cc"></code><em>{if:not isN("[vodlist:remarks]")}[vodlist:remarks]{elseif:[vodlist:state]=0}
+			[完结]{elseif:[vodlist:state]>0}[连载[vodlist:state]]{else}{end if}</em></span></li>
+			{/maccms:vodlist}
+			</ul>
+		</div>
+	</div>
+
+	<div class="blank12H"></div>
+
+	<div class="blockLC bordA clear">
+		<div style="POSITION: relative" class="title"><span><img alt="高清综艺" src="{maccms:templatepath}images/tt04.gif" width="85" height="18"></span>{maccms:menulist parent=3 order=asc}<a title='[menulist:name]' href="[menulist:link]" target="_blank">[menulist:name]</a>|{/maccms:menulist}</div>
+		<div class="pp">
+			<ul>{maccms:vodlist num=10 type=3 by=time order=desc}
+			<li><a href="[vodlist:link]" target="_blank"><img alt="[vodlist:name]" src="[vodlist:pic]" width="105" height="145"></a><span><strong ><a href="[vodlist:link]" target="_blank">[vodlist:name len=9]</a></strong>栏目：[vodlist:typename]</span><span class="label"><code class="ch"></code><em>{if:not isN("[vodlist:remarks]")}[vodlist:remarks]{elseif:[vodlist:state]=0}
+			[完结]{elseif:[vodlist:state]>0}[连载[vodlist:state]]{else}{end if}</em></span> </li>
+			{/maccms:vodlist}
+			</ul>
+		</div>
+	</div>
+	
+	<div class="blank12H"></div>
+	<div class="blockLD bordA clear">
+		<div class="title"><span><img height="18" alt="高清·动漫" src="{maccms:templatepath}images/tt07.gif" width="85" border="0"></span>{maccms:menulist  parent=4 order=asc}<a title='[menulist:name]' href="[menulist:link]" target="_blank">[menulist:name]</a>|{/maccms:menulist}</div>
+		<div class="pp">
+			<ul>{maccms:vodlist num=10 type=4 by=time order=desc}
+			<li><a href="[vodlist:link]" target="_blank"><img height="145" alt="[vodlist:name]" src="[vodlist:pic]" width="105" border="0"></a><span><strong> <a href="[vodlist:link]" target="_blank">[vodlist:name len=8]</a></strong>
+			类型：<a href="[vodlist:typelink]" target="_blank">[vodlist:typename]</A></span>
+			<span class="label"><i></i><code class="cc"></code><em>{if:not isN("[vodlist:remarks]")}[vodlist:remarks]{elseif:[vodlist:state]=0}
+			[完结]{elseif:[vodlist:state]>0}[连载[vodlist:state]]{else}{end if}</em></span></li>
+			{/maccms:vodlist}  
+			</ul>
+		</div>
+	</div>
+</div>
+
+<div class="right">
+	<div class="mvBox bordB clear">
+		<div class="tvCls clear">
+			<div class="list clear" id="movieByArea">
+				<h3>按地区|</h3>
+				<ul>
+				{maccms:arealist order=asc}
+				<li><a href="[arealist:link]">[arealist:name]</a></li>
+				{/maccms:arealist}
+				</ul>
+			</div>
+			<div class="list clear" id="movieByKind">
+				<h3>按语言|</h3>
+				<ul>
+				{maccms:languagelist order=asc}
+				<li><a href="[languagelist:link]">[languagelist:name]</a></li>
+				{/maccms:languagelist}
+				</ul>
+			</div>
+			<div class="list clear" id="movieByStar">
+				<h3>按明星|</h3>
+				<ul>
+				{label:starring.html}
+				</ul>
+			</div>
+		</div>
+	</div>
+	
+	<div class="blank12H"></div>
+	<div class="newsBox bordB clear">
+		<h2><span>电影排行榜</span></h2>
+		<div class="blank1"></div>
+		<div id="news_data" class="snList clear">
+			<ul>{maccms:vodlist num=8 type=1 by=hits order=desc}
+			<li><span class="trend"></span><span style="float:right;padding-right:10px;">[vodlist:time style=y-m-d]</span><em class="sn snr">>></em><a class="color1" href="[vodlist:link]" target="_blank" title="[vodlist:name]">[vodlist:name len=9]..</a></li>
+			{/maccms:vodlist}
+			</ul>
+		</div>
+	</div>
+	
+	<div class="blank12H"></div>
+	<div class="newsBox bordB clear">
+		<div class="blank4"></div>
+		<h2><span>电视剧排行榜</span></h2>
+		<div class="blank5"></div>
+		<div id="news_data" class="snList clear">
+			<ul>{maccms:vodlist num=16 type=2 by=hits order=desc}
+			<li><span class="trend"></span><span style="float:right;padding-right:10px;">[vodlist:time style=y-m-d]</span><em class="sn snr">>></em><a class="color1" href="[vodlist:link]" target="_blank" title="[vodlist:name]">[vodlist:name len=9]..</a></li>
+			{/maccms:vodlist}
+			</ul>
+		</div>
+	</div>
+
+	<div class="blank12H"></div>
+	<div class="newsBox bordB clear">
+		<div class="blank5"></div>
+		<h2><span>综艺排行榜</span></h2>
+		<div id="news_data" class="snList clear">
+			<ul>{maccms:vodlist num=17 type=3 by=hits order=desc}
+			<li><span class="trend"></span><span style="float:right;padding-right:10px;">[vodlist:time style=y-m-d]</span><em class="sn snr">>></em><a class="color1" href="[vodlist:link]" target="_blank" title="[vodlist:name]">[vodlist:name len=9]..</a></li>
+			{/maccms:vodlist}
+			</ul>
+		</div>
+	</div>
+
+	<div class="blank12H"></div>
+	<div class="newsBox bordB clear">
+		<div class="blank5"></div>
+		<h2><span>动漫排行榜</span></h2>
+		<div class="blank5"></div>
+		<div id="news_data" class="snList clear">
+			<ul>{maccms:vodlist num=16 type=4 by=hits order=desc}
+			<li><span class="trend"></span><span style="float:right;padding-right:10px;">{if:not isN("[vodlist:remarks]")}[vodlist:remarks]{elseif:[vodlist:state]=0}
+			[完结]{elseif:[vodlist:state]>0}[连载[vodlist:state]]集{else}{end if}</span><em class="sn snr">>></em><a class="color1" href="[vodlist:link]" target="_blank" title="[vodlist:name]">[vodlist:name len=9]..</a></li>
+			{/maccms:vodlist}
+			</ul>
+			<div class="blank5"></div>
+			<div class="blank5"></div>
+		</div>
+	</div>
+</div>
+</div>
+<div class="blank12H"></div>
+<!--友情链接-->
+<div class="links_blockLK links clear">
+	<div class="links_title"><span><img height="20" alt="合作专区" src="{maccms:templatepath}images/tt11.gif" width="71"></span></div>
+	<div class="txt">
+	<a href="http://www.maccms.com/" target="_blank">苹果电影程序</a> | 
+	<a href="http://www.688dh.com/" target="_blank">688电影导航</a> | 
+	{maccms:linklist type=all by=sort order=asc}
+	<a target="_blank" href="[linklist:link]">[linklist:name]</a> | {/maccms:linklist}
+	</div>
+</div>
+{maccms:foot}
+</body>
+</html>

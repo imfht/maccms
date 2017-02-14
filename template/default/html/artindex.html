@@ -1,0 +1,122 @@
+<!DOCTYPE HTML PUBliC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3c.org/TR/1999/REC-html401-19991224/loose.dtd">
+<HTML xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>{maccms:name} - 文章首页</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="keywords" content="{maccms:name},在线观看,免费下载" />
+<meta name="description" content="{maccms:name},国内具有影响力的电视剧网站，拥有独立韩剧字幕组，为网友带来最新，最炫的韩剧！" />
+<link type="text/css" rel="stylesheet" href="{maccms:templatepath}images/kuniao.css">
+<link type="text/css" rel="stylesheet" href="{maccms:templatepath}images/artindex.css">
+<script>var maccms_path = "{maccms:path}"</script>
+<script src="{maccms:path}js/jquery.js"></script>
+<script src="{maccms:path}js/jquery.autocomplete.js"></script>
+<script src="{maccms:path}js/function.js"></script>
+<script src="{maccms:templatepath}images/js/kuniao.js"></script>
+</head>
+<body>
+{maccms:head}
+
+<div id="newsinfo">
+	<div class="b190">
+		<div class="gundnews f12">
+			<div class="gundnew_z"><span><a href="#" target="_blank">总点击排行</a></span> </div>
+			<ul style="padding:4px 0px 0px 4px;" id="Change_zwll_1">
+			{maccms:artlist num=10 order=desc by=hitss}
+			<li>·<a href="[artlist:link]" target="_blank">[artlist:title len=11]</a></li>
+			{/maccms:artlist}
+			</ul>
+		</div>
+	  	
+		<div class="gundnews f12 pa">
+			<div class="gundnew_z"><span><a href="#" target="_blank">月点击排行</a></span> </div>
+			<ul style="padding:4px 0px 0px 4px">
+			{maccms:artlist num=10 order=desc by=monthhits}
+			<li>·<a href="[artlist:link]" target="_blank">[artlist:title len=11]</a></li>
+			{/maccms:artlist}
+			</ul>
+		</div>
+	  	
+		<div class="gundnews f12 pa">
+			<div class="gundnew_z"><span><a href="#" target="_blank">周点击排行</a></span> </div>
+			<ul style="padding:4px 0px 0px 4px">
+			{maccms:artlist num=10 order=desc by=weekhits}
+			<li>·<a href="[artlist:link]" target="_blank">[artlist:title len=11]</a></li>
+			{/maccms:artlist}
+			</ul>
+		</div>
+	</div>
+	  
+	<div class="b375">
+		<div id="kuniaos_com1">
+			<div class="hljpl"><div class="h_1">{maccms:menulist table=art type=1}<a href="[menulist:link]" target="_blank">[menulist:name]</a>{/maccms:menulist}<span class="f9">&gt;&gt;</span> </div><div class="h_2"><span class="more"> </span></div></div>
+			<div class="hlj"> 
+				<ul style="padding:5px 0px 12px 5px; *padding:5px 0px 5px 5px; _padding:5px 0px 5px 5px">
+				{maccms:artlist num=9 type=1 order=desc by=time}
+		        <li>·<a href="[artlist:link]" target="_blank">[artlist:title len=18]</a></li>
+		        {/maccms:artlist}
+				</ul>
+			</div>
+		</div>
+
+		{maccms:typematrix table=art type=2,3}
+		<div id="kuniaos_com1">
+			<div class="kuniaos_com_z"><span><a href="[typematrix:link]" target="_blank">[typematrix:name]</a></span><span class="f9">&gt;&gt;</span> </div>
+			<div class="imgArea">
+				<div class="imgLAreapic">{maccms:artlist num=1 type=[typematrix:id] order=desc by=time}<a href="[artlist:link]" target="_blank"><img src="[artlist:pic]" width="120" height="60" border="0"></a><br><a class="t" href="[artlist:link]" target="_blank">[artlist:title]</a>{/maccms:artlist}</div>
+				<ul style="padding:8px 0px 5px 5px; *padding:5px 0px 5px 5px; _padding:5px 0px 5px 5px">
+				{maccms:artlist num=4 type=2 start=2 order=desc by=time}
+			    <li>·<a href="[artlist:link]" target="_blank">[artlist:title len=18]</a></li>
+			    {/maccms:artlist}
+				</ul>
+			</div>
+			
+			<div> 
+				<ul style="padding:10px 0px 5px 5px; *padding:5px 0px 5px 5px; _padding:5px 0px 5px 5px">
+				{maccms:artlist num=8 type=[typematrix:id] start=6 order=desc by=time}
+				<li>·<a href="[artlist:link]" target="_blank">[artlist:title len=18]</a></li>
+				{/maccms:artlist}
+				</ul>
+		   </div>
+		</div>
+		{/maccms:typematrix}
+	</div>
+
+	<div class="r375">
+		<div id="kuniaos_com1">
+			<div class="hljpl"><div class="h_1">{maccms:menulist table=art type=4}<a href="[menulist:link]" target="_blank">[menulist:name]</a>{/maccms:menulist}<span class="f9">&gt;&gt;</span> </div><div class="h_2"><span class="more"> </span></div></div>
+		<div class="hlj"> 
+			<ul style="padding:5px 0px 12px 5px; *padding:5px 0px 5px 5px; _padding:5px 0px 5px 5px">
+	        {maccms:artlist num=5 type=4 order=desc by=time}
+	        <li>·<a href="[artlist:link]" target="_blank">[artlist:title len=18]</a></li>
+	        {/maccms:artlist}
+			</ul>
+		</div>
+	</div>
+
+	{maccms:typematrix table=art type=5,6}
+	<div id="kuniaos_com1">
+		<div class="kuniaos_com_z"><span><a href="[typematrix:link]" target="_blank">[typematrix:name]</a></span><span class="f9">&gt;&gt;</span> </div>
+		<div class="imgArea">
+		<div class="imgLAreapic">{maccms:artlist num=1 type=[typematrix:id] order=desc by=time}<a href="[artlist:link]" target="_blank"><img src="[artlist:pic]" width="120" height="60" border="0"></a><br><a class="t" href="[artlist:link]" target="_blank">[artlist:title]</a>{/maccms:artlist}</div>
+			<ul style="padding:8px 0px 5px 5px; *padding:5px 0px 5px 5px; _padding:5px 0px 5px 5px">
+			{maccms:artlist num=4 type=2 start=2 order=desc by=time}
+	        <li>·<a href="[artlist:link]" target="_blank">[artlist:title len=18]</a></li>
+	        {/maccms:artlist}
+			</ul>
+		</div>
+		<div> 
+			<ul style="padding:10px 0px 5px 5px; *padding:5px 0px 5px 5px; _padding:5px 0px 5px 5px">
+				{maccms:artlist num=8 type=[typematrix:id] start=6 order=desc by=time}
+				<li>·<a href="[artlist:link]" target="_blank">[artlist:title len=18]</a></li>
+				{/maccms:artlist}
+				</li>
+			</ul>
+		</div>
+	</div>
+	{/maccms:typematrix}
+</div>
+
+</div>
+{maccms:foot}
+</body>
+</html>
